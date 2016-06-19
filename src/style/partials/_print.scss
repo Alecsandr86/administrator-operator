@@ -68,6 +68,9 @@ i{
 .wrapper{
   width:1920px;
   margin: 0 auto;
+  &_100{
+    width:100%;
+  }
 }
 
 
@@ -90,7 +93,9 @@ i{
 .hidden {
   display: none;
 }
-
+.g-hidden{
+  display: none !important;
+}
 .g-left{
   float: left;
 }

@@ -15,6 +15,7 @@ $(document).ready(function(){
     };
     
     ///////////////////// скрытый пароль //////////////////////////
+    
     var $pass = $('#pass');
     var $btn_show = $('.pass-btn');
 
@@ -44,8 +45,11 @@ $(document).ready(function(){
         field: '#pass',
         control: '.js-pass'
     });
+    
     ///////////////////// \скрытый пароль\ //////////////////////////
 
+    
+    
     //////////////////////////  Табы  ///////////////////////////////
     
     $('.js-menu .menu__item').bind('click',function(){
@@ -95,10 +99,11 @@ $(document).ready(function(){
     /////////////////////////  Стилезация table  /////////////////////////////
     
     $('.table_full .table__cell').bind('click',function(e) {
+       
         if (!$(this).find('.jq-checkbox').hasClass('checked')) {
-            $(this).parents(".table__row").removeClass('table__row_checked');
+            $(this).parents('.table__row').removeClass('table__row_checked');
         } else {
-            $(this).parents(".table__row").addClass('table__row_checked');
+            $(this).parents('.table__row').addClass('table__row_checked');
         }
     });
     
@@ -114,12 +119,13 @@ $(document).ready(function(){
             .toggleClass('termin-btn_active')
             .find('.termin-btn__clock')
             .toggleClass('termin-btn__clock_active');
-    })
-    
-    
+    });
     
     ///////////////////////// \ Кнопка \ /////////////////////////////
 
+    
+    
+    
     ////////////////////////  aside-list_cont  /////////////////////////////
         
     if($('.aside-list_cont').height() > 519){
@@ -136,9 +142,8 @@ $(document).ready(function(){
     ////////////////////////  Поиск  /////////////////////////////
 
     holmes({
-        input: '.form-search__input',
-        find: '.js-searsh',
-        //placeholder: '<h3>— Нет результатов, мой дорогой Ватсон. —</h3>',
+        input: '.js-searsh__input_1',
+        find: '.js-searsh__cont_1',
         class: {
             visible: 'visible',
             hidden: 'hidden'
@@ -146,21 +151,46 @@ $(document).ready(function(){
     });
 
     holmes({
-        input: '#serch-input',
-        find: '.js-searsh',
-        //placeholder: '<h3>— Нет результатов, мой дорогой Ватсон. —</h3>',
+        input: '.js-searsh__input_2',
+        find: '.js-searsh__cont_2',
         class: {
             visible: 'visible',
             hidden: 'hidden'
         }
     });
 
+
+    holmes({
+        input: '.js-searsh__input_3',
+        find: '.js-searsh__cont_3',
+        class: {
+            visible: 'visible',
+            hidden: 'hidden'
+        }
+    });
+
+    holmes({
+        input: '.js-searsh__input_4',
+        find: '.js-searsh__cont_4',
+        class: {
+            visible: 'visible',
+            hidden: 'hidden'
+        }
+    });
+
+    holmes({
+        input: '.js-searsh__input_5',
+        find: '.js-searsh__cont_5',
+        class: {
+            visible: 'visible',
+            hidden: 'hidden'
+        }
+    });
+
+    ///////////////    Удалить результат  поиска   ///////////////
     
     jQuery(function($) {
-    
-    
-        // /////
-        // CLEARABLE INPUT
+        
         function tog(v){return v?'addClass':'removeClass';}
         $(document).on('input', '.form-search__input', function(){
             $(this)[tog(this.value)]('x');
@@ -170,9 +200,9 @@ $(document).ready(function(){
             ev.preventDefault();
             $(this).removeClass('x onX').val('').change();
             $(this).parents('.tab-content__table')
-                .find('.js-searsh').removeClass('hidden').addClass('visible');
+                .find('.table__row').removeClass('hidden').addClass('visible');
             
-            jQuery('span.highlight').each(function(){ //удаляем старую подсветку
+            jQuery('span.backlight-search').each(function(){ //удаляем старую подсветку
                 jQuery(this).after(jQuery(this).html()).remove();
             });
         });
@@ -181,82 +211,412 @@ $(document).ready(function(){
     });
     
     
-    ///////////////////////////////////////////////
+    /////////////////////   Подсветка поиска  //////////////////////////
 
     jQuery(document).ready(function(){
-        var minlen = 3; // минимальная длина слова
-        var paddingtop = 30; // отступ сверху при прокрутке
-        var scrollspeed = 200; // время прокрутки
+        var minlen = 2; // минимальная длина слова
         var keyint = 1000; // интервал между нажатиями клавиш
         var term = '';
         var n = 0;
         var time_keyup = 0;
         var time_search = 0;
-
-        jQuery('body').delegate('#spgo', 'click', function(){
-            jQuery('body,html').animate({scrollTop: jQuery('span.highlight:first').offset().top-paddingtop}, scrollspeed); // переход к первому фрагменту
-        });
+        
 
         function dosearch() {
-            term = jQuery('#spterm').val();
-            jQuery('span.highlight').each(function(){ //удаляем старую подсветку
+            term = jQuery('.js-searsh__input_1').val();
+            jQuery('span.backlight-search').each(function(){ //удаляем старую подсветку
                 jQuery(this).after(jQuery(this).html()).remove();
             });
+            
             var t = '';
-            jQuery('div#content').each(function(){ // в селекторе задаем область поиска
-                jQuery(this).html(jQuery(this).html().replace(new RegExp(term, 'ig'), '<span class="highlight">$&</span>')); // выделяем найденные фрагменты
-                n = jQuery('span.highlight').length; // количество найденных фрагментов
-                console.log('n = '+n);
-                if (n==0)
-                    jQuery('#spresult').html('Ничего не найдено');
-                else
-                    jQuery('#spresult').html('Результатов: '+n+'. <span class="splink" id="spgo">Перейти</span>');
-                if (n>1) // если больше одного фрагмента, то добавляем переход между ними
-                {
-                    var i = 0;
-                    jQuery('span.highlight').each(function(i){
-                        jQuery(this).attr('n', i++); // нумеруем фрагменты, более простого способа искать следующий элемент не нашел
-                    });
-                    jQuery('span.highlight').not(':last').attr({title: 'Нажмите, чтобы перейти к следующему фрагменту'}).click(function(){ // всем фрагментам, кроме последнего, добавляем подсказку
-                        jQuery('body,html').animate({scrollTop: jQuery('span.highlight:gt('+jQuery(this).attr('n')+'):first').offset().top-paddingtop}, scrollspeed); // переход к следующему фрагменту
-                    });
-                    jQuery('span.highlight:last').attr({title: 'Нажмите, чтобы вернуться к форме поиска'}).click(function(){
-                        jQuery('body,html').animate({scrollTop: jQuery('#spterm').offset().top-paddingtop}, scrollspeed); // переход к форме поиска
-                    });
-                }
+            jQuery('.js-searsh__cont_1 .table__cell').each(function(){ // в селекторе задаем область поиска
+                jQuery(this).html(jQuery(this).html().replace(new RegExp(term, 'ig'), '<span class="backlight-search">$&</span>')); // выделяем найденные фрагменты
+                n = jQuery('span.backlight-search').length; // количество найденных фрагментов
+                //console.log('n = '+n);
             });
+            
+            
         }
 
-        jQuery('#spterm').keyup(function(){
+        jQuery('.js-searsh__input_1').keyup(function(){
             var d1 = new Date();
             time_keyup = d1.getTime();
-            if (jQuery('#spterm').val()!=term) // проверяем, изменилась ли строка
-                if (jQuery('#spterm').val().length>=minlen) { // проверяем длину строки
+            if (jQuery('.js-searsh__input_1').val()!=term) // проверяем, изменилась ли строка
+                if (jQuery('.js-searsh__input_1').val().length>=minlen) { // проверяем длину строки
                     setTimeout(function(){ // ждем следующего нажатия
+                        
+                        setTimeout(function (e) {
+                            
+                            jQuery('div.jq-checkbox').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+                            jQuery('div.jq-checkbox__div').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+                            
+                            $('.table__row input[type="checkbox"]').styler();
+
+
+                            ////////////////////////  Статус btn  /////////////////////////////
+
+                            $('.status-btn').bind('click',function (e) {
+                                $(this).nextAll('.status-up').removeClass('g-hidden');
+                            
+                            });
+                            
+                            jQuery(function($){
+                                $(document).mouseup(function (e){ // событие клика по веб-документу
+                                    var div = $(".status-up"); // тут указываем ID элемента
+                                    if (!div.is(e.target) // если клик был не по нашему блоку
+                                        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                                        div.addClass('g-hidden'); // скрываем его
+                                    }
+                                });
+                            });
+
+                            //////////////////////// \ Статус btn \ /////////////////////////////
+                            
+                            
+                        },100);
+                        
                         var d2 = new Date();
                         time_search = d2.getTime();
                         if (time_search-time_keyup>=keyint) // проверяем интервал между нажатиями
                             dosearch(); // если все в порядке, приступаем к поиску
                     }, keyint);
                 }
-                else
-                    jQuery('#spresult').html(' '); // если строка короткая, убираем текст из DIVа с результатом 
+        });
+        
+        
+    });
+
+
+
+    jQuery(document).ready(function(){
+        var minlen2 = 2; // минимальная длина слова
+        var keyint2 = 1000; // интервал между нажатиями клавиш
+        var term2 = '';
+        var n2 = 0;
+        var time_keyup2 = 0;
+        var time_search2 = 0;
+
+
+        function dosearch() {
+            term2 = jQuery('.js-searsh__input_2').val();
+            jQuery('span.backlight-search').each(function(){ //удаляем старую подсветку
+                jQuery(this).after(jQuery(this).html()).remove();
+            });
+            var t = '';
+            jQuery('.js-searsh__cont_2 .table__cell').each(function(){ // в селекторе задаем область поиска
+                jQuery(this).html(jQuery(this).html().replace(new RegExp(term2, 'ig'), '<span class="backlight-search">$&</span>')); // выделяем найденные фрагменты
+                n2 = jQuery('span.backlight-search').length; // количество найденных фрагментов
+            });
+        }
+
+        jQuery('.js-searsh__input_2').keyup(function(){
+            var d1 = new Date();
+            time_keyup2 = d1.getTime();
+            if (jQuery('.js-searsh__input_2').val()!=term2) // проверяем, изменилась ли строка
+                if (jQuery('.js-searsh__input_2').val().length>=minlen2) { // проверяем длину строки
+                    setTimeout(function(){ // ждем следующего нажатия
+
+                        setTimeout(function (e) {
+
+                            jQuery('div.jq-checkbox').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+                            jQuery('div.jq-checkbox__div').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+
+                            $('input[type="checkbox"]').styler();
+
+                            ////////////////////////  Статус btn  /////////////////////////////
+
+                            $('.status-btn').bind('click',function (e) {
+                                $(this).nextAll('.status-up').removeClass('g-hidden');
+                            
+                            });
+                            
+                            jQuery(function($){
+                                $(document).mouseup(function (e){ // событие клика по веб-документу
+                                    var div = $(".status-up"); // тут указываем ID элемента
+                                    if (!div.is(e.target) // если клик был не по нашему блоку
+                                        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                                        div.addClass('g-hidden'); // скрываем его
+                                    }
+                                });
+                            });
+
+                            //////////////////////// \ Статус btn \ /////////////////////////////
+                            
+                            
+                        },100);
+                        
+                        
+                        var d2 = new Date();
+                        time_search2 = d2.getTime();
+                        if (time_search2-time_keyup2>=keyint2) // проверяем интервал между нажатиями
+                            dosearch(); // если все в порядке, приступаем к поиску
+                    }, keyint2);
+                }
         });
 
-        if (window.location.hash!="") // бонус
-        {
-            var t = window.location.hash.substr(1, 50); // вырезаем текст
-            jQuery('#spterm').val(t).keyup(); // вставляем его в форму поиска
-            jQuery('#spgo').click(); // переходим к первому фрагменту
+
+    });
+
+
+
+    jQuery(document).ready(function(){
+        var minlen3 = 2; // минимальная длина слова
+        var keyint3 = 1000; // интервал между нажатиями клавиш
+        var term3 = '';
+        var n3 = 0;
+        var time_keyup3 = 0;
+        var time_search3 = 0;
+
+
+        function dosearch() {
+            term3 = jQuery('.js-searsh__input_3').val();
+            jQuery('span.backlight-search').each(function(){ //удаляем старую подсветку
+                jQuery(this).after(jQuery(this).html()).remove();
+            });
+            var t = '';
+            jQuery('.js-searsh__cont_3 .table__cell').each(function(){ // в селекторе задаем область поиска
+                jQuery(this).html(jQuery(this).html().replace(new RegExp(term3, 'ig'), '<span class="backlight-search">$&</span>')); // выделяем найденные фрагменты
+                n3 = jQuery('span.backlight-search').length; // количество найденных фрагментов
+            });
         }
+
+        jQuery('.js-searsh__input_3').keyup(function(){
+            var d1 = new Date();
+            time_keyup3 = d1.getTime();
+            if (jQuery('.js-searsh__input_3').val()!=term3) // проверяем, изменилась ли строка
+                if (jQuery('.js-searsh__input_3').val().length>=minlen3) { // проверяем длину строки
+                    setTimeout(function(){ // ждем следующего нажатия
+
+                        setTimeout(function (e) {
+
+                            jQuery('div.jq-checkbox').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+                            jQuery('div.jq-checkbox__div').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+
+                            $('input[type="checkbox"]').styler();
+
+                            ////////////////////////  Статус btn  /////////////////////////////
+
+                            $('.status-btn').bind('click',function (e) {
+                                $(this).nextAll('.status-up').removeClass('g-hidden');
+
+                            });
+
+                            jQuery(function($){
+                                $(document).mouseup(function (e){ // событие клика по веб-документу
+                                    var div = $(".status-up"); // тут указываем ID элемента
+                                    if (!div.is(e.target) // если клик был не по нашему блоку
+                                        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                                        div.addClass('g-hidden'); // скрываем его
+                                    }
+                                });
+                            });
+
+                            //////////////////////// \ Статус btn \ /////////////////////////////
+
+
+                        },100);
+
+
+                        var d2 = new Date();
+                        time_search3 = d2.getTime();
+                        if (time_search3-time_keyup3>=keyint3) // проверяем интервал между нажатиями
+                            dosearch(); // если все в порядке, приступаем к поиску
+                    }, keyint3);
+                }
+        });
+
+
+    });
+
+
+    jQuery(document).ready(function(){
+        var minlen4 = 2; // минимальная длина слова
+        var keyint4 = 1000; // интервал между нажатиями клавиш
+        var term4 = '';
+        var n4 = 0;
+        var time_keyup4 = 0;
+        var time_search4 = 0;
+
+
+        function dosearch() {
+            term4 = jQuery('.js-searsh__input_4').val();
+            jQuery('span.backlight-search').each(function(){ //удаляем старую подсветку
+                jQuery(this).after(jQuery(this).html()).remove();
+            });
+
+            var t = '';
+            jQuery('.js-searsh__cont_4 .table__cell').each(function(){ // в селекторе задаем область поиска
+                jQuery(this).html(jQuery(this).html().replace(new RegExp(term4, 'ig'), '<span class="backlight-search">$&</span>')); // выделяем найденные фрагменты
+                n4 = jQuery('span.backlight-search').length; // количество найденных фрагментов
+                //console.log('n = '+n);
+            });
+
+
+        }
+
+        jQuery('.js-searsh__input_4').keyup(function(){
+            var d1 = new Date();
+            time_keyup4 = d1.getTime();
+            if (jQuery('.js-searsh__input_4').val()!=term4) // проверяем, изменилась ли строка
+                if (jQuery('.js-searsh__input_4').val().length>=minlen4) { // проверяем длину строки
+                    setTimeout(function(){ // ждем следующего нажатия
+
+                        setTimeout(function (e) {
+
+                            jQuery('div.jq-checkbox').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+                            jQuery('div.jq-checkbox__div').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+
+                            $('.table__row input[type="checkbox"]').styler();
+
+
+                            ////////////////////////  Статус btn  /////////////////////////////
+
+                            $('.status-btn').bind('click',function (e) {
+                                $(this).nextAll('.status-up').removeClass('g-hidden');
+
+                            });
+
+                            jQuery(function($){
+                                $(document).mouseup(function (e){ // событие клика по веб-документу
+                                    var div = $(".status-up"); // тут указываем ID элемента
+                                    if (!div.is(e.target) // если клик был не по нашему блоку
+                                        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                                        div.addClass('g-hidden'); // скрываем его
+                                    }
+                                });
+                            });
+
+                            //////////////////////// \ Статус btn \ /////////////////////////////
+
+
+                        },100);
+
+                        var d2 = new Date();
+                        time_search4 = d2.getTime();
+                        if (time_search4-time_keyup4>=keyint4) // проверяем интервал между нажатиями
+                            dosearch(); // если все в порядке, приступаем к поиску
+                    }, keyint4);
+                }
+        });
+
+
+    });
+
+
+    jQuery(document).ready(function(){
+        var minlen5 = 2; // минимальная длина слова
+        var keyint5 = 1000; // интервал между нажатиями клавиш
+        var term5 = '';
+        var n5 = 0;
+        var time_keyup5 = 0;
+        var time_search5 = 0;
+
+
+        function dosearch() {
+            term5 = jQuery('.js-searsh__input_5').val();
+            jQuery('span.backlight-search').each(function(){ //удаляем старую подсветку
+                jQuery(this).after(jQuery(this).html()).remove();
+            });
+
+            var t = '';
+            jQuery('.js-searsh__cont_5 .table__cell').each(function(){ // в селекторе задаем область поиска
+                jQuery(this).html(jQuery(this).html().replace(new RegExp(term5, 'ig'), '<span class="backlight-search">$&</span>')); // выделяем найденные фрагменты
+                n5 = jQuery('span.backlight-search').length; // количество найденных фрагментов
+                //console.log('n = '+n);
+            });
+
+
+        }
+
+        jQuery('.js-searsh__input_5').keyup(function(){
+            var d1 = new Date();
+            time_keyup5 = d1.getTime();
+            if (jQuery('.js-searsh__input_5').val()!=term5) // проверяем, изменилась ли строка
+                if (jQuery('.js-searsh__input_5').val().length>=minlen5) { // проверяем длину строки
+                    setTimeout(function(){ // ждем следующего нажатия
+
+                        setTimeout(function (e) {
+
+                            jQuery('div.jq-checkbox').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+                            jQuery('div.jq-checkbox__div').each(function(){ //удаляем старую подсветку
+                                jQuery(this).after(jQuery(this).html()).remove();
+                            });
+
+                            $('.table__row input[type="checkbox"]').styler();
+
+
+                            ////////////////////////  Статус btn  /////////////////////////////
+
+                            $('.status-btn').bind('click',function (e) {
+                                $(this).nextAll('.status-up').removeClass('g-hidden');
+
+                            });
+
+                            jQuery(function($){
+                                $(document).mouseup(function (e){ // событие клика по веб-документу
+                                    var div = $(".status-up"); // тут указываем ID элемента
+                                    if (!div.is(e.target) // если клик был не по нашему блоку
+                                        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                                        div.addClass('g-hidden'); // скрываем его
+                                    }
+                                });
+                            });
+
+                            //////////////////////// \ Статус btn \ /////////////////////////////
+
+
+                        },100);
+
+                        var d2 = new Date();
+                        time_search5 = d2.getTime();
+                        if (time_search5-time_keyup5>=keyint5) // проверяем интервал между нажатиями
+                            dosearch(); // если все в порядке, приступаем к поиску
+                    }, keyint5);
+                }
+        });
+
+
     });
     
     
     
     
+    ////////////////////////  Статус btn  /////////////////////////////
     
+    $('.status-btn').bind('click',function (e) {
+       $(this).nextAll('.status-up').removeClass('g-hidden');
+        
+    });
     
-    //////////////////////// \ Поиск \ /////////////////////////////
+    jQuery(function($){
+        $(document).mouseup(function (e){ // событие клика по веб-документу
+            var div = $(".status-up"); // тут указываем ID элемента
+            if (!div.is(e.target) // если клик был не по нашему блоку
+                && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                div.addClass('g-hidden'); // скрываем его
+            }
+        });
+    });
+    
+    //////////////////////// \ Статус btn \ /////////////////////////////
     
     
     
