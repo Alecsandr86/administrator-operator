@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/jquery.formstyler.css">
+    <link rel="stylesheet" href="js/source/jquery.fancybox.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -25,12 +26,37 @@
         <div class="header__logo">
             <img src="images/logo.png" alt="logo">
         </div>
-        <nav class="header__menu menu js-menu">
-            <a class="menu__item menu__item-active" href="javascript: void(0);">Заказы</a>
-            <a class="menu__item" href="javascript: void(0);">Персонал</a>
-            <a class="menu__item" href="javascript: void(0);">Касса</a>
-            <a class="menu__item" href="javascript: void(0);">Склад</a>
-        </nav>
+        <ul class="header__menu menu js-menu">
+            <li class="menu__li">
+                <a class="menu__item menu__item-active" href="javascript: void(0);">Заказы</a>
+            </li>
+            <li class="menu__li">
+                <a class="menu__item" href="javascript: void(0);">Персонал</a>
+            </li>
+            <li class="menu__li">
+                <a class="menu__item" href="javascript: void(0);">Касса</a>
+            </li>
+            <li class="menu__li">
+                <a class="menu__item" href="javascript: void(0);">
+                    Склад
+                    <i class="menu__item-tr"></i>
+                </a>
+                <ul class="nav-tab nav-tab_menu">
+                    <li class="nav-tab_menu__item">
+                        <a class="nav-tab_menu__link nav-tab__link-active" href="javascript: void(0);">Списания</a>
+                    </li>
+                    <li class="nav-tab_menu__item">
+                        <a class="nav-tab_menu__link" href="javascript: void(0);">Стоп-лист</a>
+                    </li>
+                    <li class="nav-tab_menu__item">
+                        <a class="nav-tab_menu__link" href="javascript: void(0);">Приход</a>
+                    </li>
+                    <li class="nav-tab_menu__item">
+                        <a class="nav-tab_menu__link" href="javascript: void(0);">Остатки</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
         <div class="header__additional additional">
             <a class="additional__report" href="javascript: void(0);"> <i class="icon-print"></i>Предварительный отчет</a>
             <a class="additional__mail" href="javascript: void(0);">a.genadievna@pirogidomoy.ru</a>
@@ -3235,6 +3261,7 @@
             
         </div>
     </div>
+    
     <div class="content__item">
         <div class="wrapper wrapper g-both">
 
@@ -3242,8 +3269,8 @@
                 <div class="tab-content__change tab-content__change_cashbox g-both">
                     
                     <div class="cashbox">
-                        <a class="cashbox__btn cashbox__btn_entry" href="javascript: void(0);">Внесение наличных</a>
-                        <a class="cashbox__btn cashbox__btn_withdrawal" href="javascript: void(0);">Изъятие наличных</a>
+                        <a class="cashbox__btn cashbox__btn_entry js-fancy" href="#cash">Внесение наличных</a>
+                        <a class="cashbox__btn cashbox__btn_withdrawal  js-fancy" href="#close-replaced">Изъятие наличных</a>
                     </div>
                     
                     <div class="cashbox-result cashbox-result_shadow">
@@ -3548,7 +3575,642 @@
         </div>
         
     </div>
-    <div class="content__item"></div>
+    
+    <div class="content__item">
+
+        <div class="wrapper g-both">
+
+            <div class="tab tab-100 g-both">
+                <ul class="nav-tab">
+                    <li class="nav-tab__item">
+                        <a class="nav-tab__link nav-tab__link-active" href="javascript: void(0);">Списания</a>
+                    </li>
+                    <li class="nav-tab__item">
+                        <a class="nav-tab__link" href="javascript: void(0);">Стоп-лист</a>
+                    </li>
+                    <li class="nav-tab__item">
+                        <a class="nav-tab__link" href="javascript: void(0);">Приход</a>
+                    </li>
+                    <li class="nav-tab__item">
+                        <a class="nav-tab__link" href="javascript: void(0);">Остатки</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+
+                <div class="tab-content__item tab-content__item_active">
+
+                    <div class="tab-content__table  tab-content__table_100 tab-content__table_pdt">
+
+                        <div class="tab-content__change tab-content__change_cashbox g-both">
+                            
+                            <div class="cashbox">
+                                <a class="cashbox__btn cashbox__btn_entry" href="javascript: void(0);">Списать товар</a>
+                            </div>
+                            
+                        </div>
+                        
+                        <!--table-->
+                        <div class="table-cast">
+                            <table class="table-cast__box table table_full">
+                                <tr class="table__row table__row_shadow">
+                                    <th class="table__header">
+                                        Дата списания
+                                    </th>
+                                    <th class="table__header">
+                                        Позиция
+                                    </th>
+                                    <th class="table__header">
+                                        Кол-во
+                                    </th>
+                                    <th class="table__header">
+                                        Причина списания
+                                    </th>
+                                    <th class="table__header">
+                                        Комментарий
+                                    </th>
+                                    <th class="table__header table__header_col6">
+                                        
+                                    </th>
+                                </tr>
+                                
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell">
+                                        Сегодня в 13:30
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Мука
+                                    </td>
+                                    <td class="table__cell">
+                                        1 уп.
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Брак
+                                    </td>
+                                    <td class="table__cell">
+                                        Испорченная упаковка
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell">
+                                        Сегодня в 13:00
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Баранина
+                                    </td>
+                                    <td class="table__cell">
+                                        20 кг.
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Вышел срок хранения
+                                    </td>
+                                    <td class="table__cell">
+                                        
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell">
+                                        Сегодня в 12:25
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Лапша
+                                    </td>
+                                    <td class="table__cell">
+                                        4 уп.
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Обед
+                                    </td>
+                                    <td class="table__cell">
+
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell">
+                                        Сегодня в 12:10
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Говядина
+                                    </td>
+                                    <td class="table__cell">
+                                        1 кг.
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Обед
+                                    </td>
+                                    <td class="table__cell">
+
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell">
+                                        <i class="icon-btn-up js-btn__cont-down"></i>
+                                        Сегодня в 11:55
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Русские пироги
+                                    </td>
+                                    <td class="table__cell">
+                                        5 шт.
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Вышел срок хранения
+                                    </td>
+                                    <td class="table__cell">
+                                        
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 js-cont-down">
+                                    <td class="table__cell">
+                                        
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        <ul class="table-list">
+                                            <li class="table-list__item">С капустой и яйцом</li>
+                                            <li class="table-list__item">С рыбой</li>
+                                            <li class="table-list__item">С индейкой и грибами</li>
+                                            <li class="table-list__item">С мясом</li>
+                                            <li class="table-list__item">С яблоками и корицей</li>
+                                        </ul>
+                                    </td>
+                                    <td class="table__cell">
+                                        <ul class="table-list">
+                                            <li class="table-list__item">1 шт.</li>
+                                            <li class="table-list__item">1 шт.</li>
+                                            <li class="table-list__item">1 шт.</li>
+                                            <li class="table-list__item">1 шт.</li>
+                                            <li class="table-list__item">1 шт.</li>
+                                        </ul>
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        
+                                    </td>
+                                    <td class="table__cell">
+
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+                                
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell">
+                                        Вчера в 23:00
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Лапша
+                                    </td>
+                                    <td class="table__cell">
+                                        1 уп.
+                                    </td>
+                                    <td class="table__cell  table__cell_tal">
+                                        Брак
+                                    </td>
+                                    <td class="table__cell">
+
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                        <!--\table\-->
+                    </div>
+
+                </div>
+
+
+                <div class="tab-content__item">
+
+                    <div class="tab-content__table  tab-content__table_100 tab-content__table_pdt">
+
+                        <div class="tab-content__change tab-content__change_cashbox g-both">
+
+                            <div class="cashbox">
+                                <a class="cashbox__btn cashbox__btn_entry" href="javascript: void(0);">Добавить в стоп-лист</a>
+                            </div>
+
+                        </div>
+
+                        <!--table-->
+                        <div class="table-cast">
+                            <table class="table-cast__box table table_full">
+                                <tr class="table__row table__row_shadow">
+                                    <th class="table__header">
+                                        Время внесения
+                                    </th>
+                                    <th class="table__header">
+                                        Позиция
+                                    </th>
+                                    <th class="table__header">
+                                        Причина
+                                    </th>
+                                    <th class="table__header">
+                                        Комментарий
+                                    </th>
+                                    <th class="table__header table__header_col6">
+
+                                    </th>
+                                </tr>
+                                
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        <i class="icon-btn-up js-btn__cont-down"></i>
+                                        Сегодня в 13:30
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Баранина
+                                    </td>
+                                    <td class="table__cell">
+                                        Испортилость
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Испорченная упаковка
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        <a class="status-btn status-btn_del" href="javascript: void(0);">Убрать из стоп-листа</a>
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 js-cont-down">
+                                    
+                                    <td class="table__cell table__cell_tal">
+                                        
+                                        <ul class="table-list table-list_bd">
+                                            <li class="table-list__item">
+                                                <span class="table-list__bol table-list__bol-bd">Позиции недоступные для производства</span>
+                                            </li>
+                                            <li class="table-list__item table-list_bd-bd">Пицца Барселона</li>
+                                            <li class="table-list__item table-list_bd-bd">Осетинский пирог с бараниной</li>
+                                            <li class="table-list__item table-list_bd-bd">Осетинский пирог с бараниной и грибами</li>
+                                            <li class="table-list__item table-list_bd-bd">Осетинский пирог с бараниной и сыром</li>
+                                            <li class="table-list__item table-list_bd-bd">Осетинский пирог с бараниной картошкой</li>
+                                        </ul>
+                                        
+                                    </td>
+                                    <td class="table__cell">
+                                        
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                    <td class="table__cell">
+
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        Сегодня в 13:00
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Перец чили
+                                    </td>
+                                    <td class="table__cell">
+                                        Закончилось
+                                    </td>
+                                    <td class="table__cell  table__cell_tal">
+                                        
+                                    </td>
+                                    <td class="table__cell">
+
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        Сегодня в 12:25
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Байкал
+                                    </td>
+                                    <td class="table__cell">
+                                        Закончилось
+                                    </td>
+                                    <td class="table__cell  table__cell_tal">
+
+                                    </td>
+                                    <td class="table__cell">
+
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                        <!--\table\-->
+                    </div>
+
+                </div>
+
+
+                <div class="tab-content__item">
+                    <div class="tab-content__table  tab-content__table_100 tab-content__table_pdt">
+                        
+                        <!--table-->
+                        <div class="table-cast">
+                            <table class="table-cast__box table table_full">
+                                <tr class="table__row table__row_shadow">
+                                    <th class="table__header table__cell_tal">
+                                        Время приёмки
+                                    </th>
+                                    <th class="table__header table__cell_tal">
+                                        Поставщик
+                                    </th>
+                                    <th class="table__header table__cell_tal">
+                                        Сумма р.
+                                    </th>
+                                    <th class="table__header table__cell_tal">
+                                        Кол-во ед.
+                                    </th>
+                                    <th class="table__header table__header_col6">
+
+                                    </th>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        <i class="icon-btn-up js-btn__cont-down"></i>
+                                        Сегодня в 13:30
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        ООО Вкусно
+                                    </td>
+                                    <td class="table__cell">
+                                        15 000
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        5
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 js-cont-down">
+
+                                    <td class="table__cell table__cell_top table__cell_tal">
+
+                                        <ul class="table-list table-list_w6">
+                                            <li class="table-list__item">
+                                                <span class="table-list__bol">Позиция</span>
+                                            </li>
+                                            <li class="table-list__item">Шампиньоны </li>
+                                            <li class="table-list__item">Томаты</li>
+                                            <li class="table-list__item">Оливки</li>
+                                            <li class="table-list__item">Моццарела</li>
+                                            <li class="table-list__item">Мука</li>
+                                        </ul>
+                                        
+                                        <ul class="table-list table-list_w6">
+                                            <li class="table-list__item">
+                                                <span class="table-list__bol">По приёмке</span>
+                                            </li>
+                                            <li class="table-list__item">10 уп.</li>
+                                            <li class="table-list__item">
+                                                <span class="time time_red">28 кг.</span>
+                                            </li>
+                                            <li class="table-list__item">
+                                                <span class="time time_red">18 бан.</span>
+                                            </li>
+                                            <li class="table-list__item">
+                                                <span class="time time_red">7,45 кг.</span>
+                                            </li>
+                                            <li class="table-list__item">12 уп.</li>
+                                        </ul>
+
+                                    </td>
+                                    <td class="table__cell table__cell_top table__cell_tal">
+                                        <ul class="table-list ">
+                                            <li class="table-list__item">
+                                                <span class="table-list__bol">По накладной</span>
+                                            </li>
+                                            <li class="table-list__item">10 уп.</li>
+                                            <li class="table-list__item">30 кг</li>
+                                            <li class="table-list__item">20 бан.</li>
+                                            <li class="table-list__item">5,43 кг.</li>
+                                            <li class="table-list__item">12 уп.</li>
+                                        </ul>
+                                    </td>
+                                    <td class="table__cell table__cell_top table__cell_tal">
+                                        <ul class="table-list ">
+                                            <li class="table-list__item">
+                                                <span class="table-list__bol">Брак</span>
+                                            </li>
+                                            <li class="table-list__item"></li>
+                                            <li class="table-list__item"></li>
+                                            <li class="table-list__item">2 бан.</li>
+                                            <li class="table-list__item"></li>
+                                            <li class="table-list__item"></li>
+                                        </ul>
+                                    </td>
+                                    <td class="table__cell table__cell_top table__cell_tal">
+                                        <ul class="table-list ">
+                                            <li class="table-list__item">
+                                                <span class="table-list__bol">Комментарий</span>
+                                            </li>
+                                            <li class="table-list__item"></li>
+                                            <li class="table-list__item"></li>
+                                            <li class="table-list__item">Открытые банки</li>
+                                            <li class="table-list__item"></li>
+                                            <li class="table-list__item"></li>
+                                        </ul>
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        Сегодня в 13:00
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Перец чили
+                                    </td>
+                                    <td class="table__cell">
+                                        Закончилось
+                                    </td>
+                                    <td class="table__cell  table__cell_tal">
+
+                                    </td>
+                                    <td class="table__cell">
+
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        Сегодня в 12:25
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        Байкал
+                                    </td>
+                                    <td class="table__cell">
+                                        Закончилось
+                                    </td>
+                                    <td class="table__cell  table__cell_tal">
+
+                                    </td>
+                                    <td class="table__cell">
+
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                        <!--\table\-->
+                    </div>
+
+                </div>
+
+
+                <div class="tab-content__item">
+                    <div class="tab-content__table  tab-content__table_100 tab-content__table_pdt">
+
+                        <div class="tab-content__change tab-content__change_cashbox g-both">
+
+                            <form class="form g-both" action="javascript: void(0);">
+                               <select class="form__select form__select_poz g-left">
+                                   <option>Пироги</option>
+                                   <option>Пироги1</option>
+                                   <option>Пироги2</option>
+                                   <option>Пироги3</option>
+                               </select>
+
+                                <input class="form-search__input g-left js-searsh__input_1" type="text" placeholder="Поиск по продукту">
+
+                            </form>
+
+                        </div>
+
+                        <!--table-->
+                        <div class="table-cast">
+                            <table class="table-cast__box table table_full">
+                                <tr class="table__row table__row_shadow">
+                                    <th class="table__header table__cell_tal">
+                                        Наименование
+                                    </th>
+                                    <th class="table__header table__cell_tal">
+                                        Вес гр.
+                                    </th>
+                                    <th class="table__header">
+                                        Шт.
+                                    </th>
+                                    <th class="table__header table__header_col7">
+
+                                    </th>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        Пасхальный кулич
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        800
+                                    </td>
+                                    <td class="table__cell">
+                                        22
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        Пирог с абрикосом
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        800
+                                    </td>
+                                    <td class="table__cell">
+                                        5
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        Пирог с малиной
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        800
+                                    </td>
+                                    <td class="table__cell">
+                                        6
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+
+                                <tr class="table__row js-searsh__cont_1 ">
+                                    <td class="table__cell table__cell_tal">
+                                        Пирог с яблоками
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+                                        800
+                                    </td>
+                                    <td class="table__cell">
+                                        3
+                                    </td>
+                                    <td class="table__cell table__cell_tal">
+
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                        <!--\table\-->
+                    </div>
+                   
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
     
 </div>
 <!--\content\-->
@@ -3586,10 +4248,71 @@
 </footer>
 <!--/footer/-->
 
+
+
+<!--popap-->
+<div class="popap">
+    
+    <div id="cash" class="popap__item">
+        <a class="fancy-clock" href="javascript:parent.$.fancybox.close();"></a>
+        <h4 class="popap_h">Внесение наличных</h4>
+        
+        <form class="popap-form" action="javascript: void(0);">
+            
+            <label class="popap-form__item g-left">
+                <span class="popap-form__tit">Сумма</span>
+                <span class="popap-form__input input-cash">
+                    <input class="input-cash__text" type="text">
+                    <span class="input-cash__currency">руб.</span>
+                </span>
+            </label>
+
+            <label class="popap-form__item g-right">
+                <span class="popap-form__tit">Внесение</span>
+                <select class="popap-form__select">
+                    <option>Заказ №30-230</option>
+                    <option>Заказ №30-231</option>
+                    <option>Заказ №30-232</option>
+                </select>
+            </label>
+
+            <label class="popap-form__item">
+                <span class="popap-form__tit">Комментарий</span>
+                <textarea class="popap-form__textarea"></textarea>
+            </label>
+            
+        </form>
+        
+        <div class="popap-footer">
+            <input class="popap-footer-btn" type="button" value="Внести наличные">
+        </div>
+    </div>
+    
+    <div id="close-replaced" class="popap__item">
+        <a class="fancy-clock" href="javascript:parent.$.fancybox.close();"></a>
+        <h4 class="popap_h">Закрыть смену</h4>
+
+        <div class="popap-content">
+            <p class="popap-content__text">
+                Вы на смене: 8 часов 10 минут <br>
+                Деньги в кассе: <span class="popap-content__dist">80 500 руб.</span>
+            </p>
+        </div>
+
+        <div class="popap-footer">
+            <input class="popap-footer-btn" type="button" value="Закрыть смену и распечатать отчёт">
+        </div>
+    </div>
+    
+</div>
+<!--\popap\-->
+
+
   </div>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.formstyler.min.js"></script>
   <script src="js/holmes.js"></script>
+  <script src="js/source/jquery.fancybox.pack.js"></script>
   <script src="js/script.js"></script>
 
 </body>

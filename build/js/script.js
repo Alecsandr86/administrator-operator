@@ -52,11 +52,11 @@ $(document).ready(function(){
     
     //////////////////////////  Табы  ///////////////////////////////
     
-    $('.js-menu .menu__item').bind('click',function(){
+    $('.js-menu .menu__li').bind('click',function(){
    
-        if(!$(this).hasClass('menu__item-active')){
+        if(!$(this).find('.menu__item').hasClass('menu__item-active')){
             $('.menu__item').removeClass('menu__item-active');
-            $(this)
+            $(this).find('.menu__item')
                 .addClass('menu__item-active')
                 .parents('body').find('.content__item')
                 .removeClass('content__item-active')
@@ -88,7 +88,7 @@ $(document).ready(function(){
     /////////////////////////  Стилезация форм  /////////////////////////////
     $(function() {
 
-        $('input[type="checkbox"]').styler();
+        $('input[type="checkbox"], select').styler();
 
     });
 
@@ -599,7 +599,7 @@ $(document).ready(function(){
     
     
     
-    ////////////////////////  Статус btn  /////////////////////////////
+    ////////////////////////  btn  /////////////////////////////
     
     $('.status-btn').bind('click',function (e) {
        $(this).nextAll('.status-up').removeClass('g-hidden');
@@ -616,10 +616,35 @@ $(document).ready(function(){
         });
     });
     
-    //////////////////////// \ Статус btn \ /////////////////////////////
+    
+    
+    $('.js-btn__cont-down').bind('click',function (e) {
+        $(this).toggleClass('js-btn__cont-down_active').parents('.table-cast').find('.js-cont-down').slideToggle(0);
+    });
     
     
     
+    
+    //////////////////////// \  btn \ /////////////////////////////
+    
+    
+    
+    ////////////////////////    fancybox   /////////////////////////////
+    
+    //$('.js-fancy').fancybox();
+
+    $('.js-fancy').fancybox({
+        padding : 0,
+        closeBtn: false
+    });
+    
+    
+    //////////////////////// \  fancybox \ /////////////////////////////
+    
+    
+    // $('.menu__up').bind("mouseenter", function (e) {
+    //     $(this).next('.nav-tab_menu').css({"display":"block"})
+    // })
     
     
     

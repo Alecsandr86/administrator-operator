@@ -3,6 +3,8 @@
 
 //////////////// login /////////////////////
 
+
+
 .pages-login{
   position: relative;
   width: 100%;
@@ -24,7 +26,6 @@
     }
   }
 }
-
 
 
 
@@ -83,6 +84,7 @@
 }
 
 
+
 .show_pass{
   opacity: 1;
 }
@@ -124,6 +126,60 @@
 //////////////// \login\ /////////////////////
 
 
+
+//////////////// output  /////////////////////
+
+
+
+.pages-output{
+  
+}
+.authorization_output{
+  background-color: #f7f7f7;
+  box-shadow: none;
+  padding-top: 80px;
+}
+.output-content{
+  &__name{
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+  &__position{
+    color: #8e8e8e;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+  }
+  &__text{
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 30px 0;
+    min-height: 200px;
+  }
+  &__dist{
+    background-color: #fff6ac;
+  }
+  &__btn{
+    color: #308fcc;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 19px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+
+//////////////// \output\ /////////////////////
+
+
+
+
 //////////////// header /////////////////////
 
 
@@ -138,6 +194,7 @@
   &__menu{
     padding: 4px 3px 0;
     float: left;
+    position: relative;
   }
   &__additional{
     float: right;
@@ -147,6 +204,27 @@
 
 
 .menu{
+  &__li{
+    display: inline-block;
+    &:hover{
+      .nav-tab_menu{
+        display: block;
+      }
+      .menu__item{
+        color: #454545;
+        background-color: #fff;
+        -webkit-border-radius: 5px 5px 0 0;
+        -moz-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+        .menu__item-tr{
+          opacity:1;
+        }
+      }
+      
+    }
+    
+    
+  }
   &__item{
     font-size:13px;
     color: #fff;
@@ -154,21 +232,33 @@
     padding: 11px 22px 10px;
     display: inline-block;
     transition:all 0.3s ease;
+    position: relative;
     &-active{
       color: #454545;
       background-color: #fff;
       -webkit-border-radius: 5px 5px 0 0;
       -moz-border-radius: 5px 5px 0 0;
       border-radius: 5px 5px 0 0;
+      .menu__item-tr{
+        opacity:1;
+      }
     }
     &:hover{
-      color: #454545;
-      background-color: #fff;
-      -webkit-border-radius: 5px 5px 0 0;
-      -moz-border-radius: 5px 5px 0 0;
-      border-radius: 5px 5px 0 0;
+      
+    }
+    &-tr{
+      opacity: 0;
+      position: absolute;
+      top: 16px;
+      right: 8px;
+      display: inline-block;
+      border-top: 5px solid #7f7f7f;
+      border-right: 4px solid transparent;
+      border-bottom: none;
+      border-left: 4px solid transparent;
     }
   }
+  
 }
 
 
@@ -217,12 +307,16 @@
   margin:0 0 0 5px;
 }
 
+
+
 //////////////// \header\ /////////////////////
 
 
 
 
 //////////////// content\ /////////////////////
+
+
 
 .content{
   padding-bottom: 80px;
@@ -243,6 +337,11 @@
   width:1534px;
   position: absolute;
   top:0;
+  &-100{
+    width:100%;
+    min-width:1920px;
+    border-right: none;
+  }
 }
 
 
@@ -250,9 +349,43 @@
 .nav-tab{
   padding:4px 0 0 45px;
   float: left;
+  &_menu{
+    display: none;
+    position: absolute;
+    top: 38px;
+    right: -35%;
+    padding: 0;
+    z-index:9;
+    background-color: #fff;
+    width:213px;
+    border: 1px solid #e1e1e1;
+    border-radius:0 0 3px 3px;
+    
+    
+    &__item{
+      border-bottom: 1px solid #ededed;
+      padding:5px 20px;
+    }
+    &__link{
+      color: #565656;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 30px;
+      text-decoration: none;
+      
+    }
+  }
   &__item{
     display: inline-block;
     padding: 0 12px;
+    
+  }
+  &__up{
+    &:hover{
+      .nav-tab_menu{
+        display: block;
+      }
+    }
   }
   &__link{
     display: inline-block;
@@ -384,6 +517,13 @@
       float: right;
     }
   }
+  &__select{
+    
+    &_poz{
+      margin: 3px 20px 0 0;
+      min-width: 110px;
+    }
+  }
  
 }
 
@@ -431,12 +571,15 @@ span.backlight-search {
     border-right: 1px solid #e4e4e4;
     padding: 4px 0 7px;
     overflow: hidden;
-    height:35px;
     &_col5{
       width: 45%;
     }
     &_col6{
       width: 60%;
+      padding:0 15px;
+    }
+    &_col7{
+      width: 70%;
       padding:0 15px;
     }
   }
@@ -445,11 +588,43 @@ span.backlight-search {
     border-bottom: 1px solid #e4e4e4;
     padding: 13px 10px 11px;
     vertical-align: middle;
+    position: relative;
     &_tal{
       text-align: left;
+      padding-left: 25px;
+    }
+    &_top{
+      vertical-align: top;
+    }
+  }
+  &-list{
+    vertical-align: top;
+    &__item{
+      line-height:22px;
+      min-height: 26px;
+    }
+    &__bol{
+      font-weight: bold;
+      &-bd{
+        padding-left: 25px;
+      }
+    }
+    &_bd{
+      margin-left: -25px;
+      
+      &-bd{
+        border-left: 2px solid #ff5656;
+        padding-left: 25px;
+      }
+    }
+    &_w6{
+      width:50%;
+      float: left;
     }
   }
 }
+
+
 
 .status{
   position: relative;
@@ -483,6 +658,13 @@ span.backlight-search {
       background-color: #fcad24;
       color: #ffffff;
     }
+    &_del{
+      background-color: #fff;
+      border: 1px solid #d9d9d9;
+      border-radius: 3px;
+      min-width:150px;
+      height:auto;
+    }
   }
   &-up{
     position: absolute;
@@ -511,6 +693,7 @@ span.backlight-search {
       }
   }
 }
+
 
 
 .position-btn{
@@ -619,6 +802,7 @@ span.backlight-search {
 }
 
 
+
 .aside{
   width:386px;
   float: right;
@@ -685,6 +869,7 @@ span.backlight-search {
 }
 
 
+
 .aside-list{
   
   &_cont{
@@ -731,6 +916,7 @@ span.backlight-search {
 }
 
 
+
 .name{
   &_green{
     color: #50b612;
@@ -739,6 +925,7 @@ span.backlight-search {
     color: #ff7b33;
   }
 }
+
 
 
 .icon-user_min{
@@ -752,6 +939,9 @@ span.backlight-search {
 
 
 //////////////// footer /////////////////////
+
+
+
 .footer{
   height:70px;
   position: absolute;
@@ -838,7 +1028,165 @@ span.backlight-search {
   }
 }
 
+
+
 //////////////// \footer\ /////////////////////
+
+
+////////////////    JS     /////////////////////
+
+
+
+.js-btn__cont-down{
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  cursor: pointer;
+  margin-top:-2.5px;
+  &_active{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+
+
+.js-cont-down{
+ 
+}
+
+////////////////  \ JS  \  /////////////////////
+
+
+
+////////////////    popap    /////////////////////
+
+
+.popap{
+  display: none;
+  &-content{
+    padding: 30px 37px 20px 30px;
+    &__text{
+      font-weight: bold;
+      font-size:18px;
+    }
+    &__dist{
+      background-color: #fff6ae;
+    }
+  }
+  &__item{
+    background-color: #fff;
+    border-radius: 3px;
+    position: relative;
+    width: 378px;
+  }
+  &_h{
+    color: #404040;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    padding: 20px 37px 0 30px;
+  }
+  &-form{
+    padding: 0 37px 0 30px;
+    &__input{
+      display: inline-block;
+      width: 114px;
+      height: 35px;
+      background-color: #fff;
+      border: 1px solid #e4e4e4;
+      border-radius: 3px;
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.16);
+
+    }
+    &__item{
+      margin: 11px 0 13px;
+    }
+    &__tit{
+      color: #7e7e7e;
+      font-size: 13px;
+      display: block;
+      padding:5px 0;
+    }
+    &__textarea{
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #e4e4e4;
+      border-radius: 3px;
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.16);
+      height:54px;
+      resize: none;
+      padding:10px;
+    }
+    &__select{
+      min-width: 179px;
+      .jq-selectbox__select{
+        height:35px;
+        line-height:32px;
+      }
+      .jq-selectbox__dropdown{
+        top:33px;
+      }
+    }
+  }
+}
+
+
+
+.input-cash{
+  
+  &__currency{
+    color: #454545;
+    font-size: 13px;
+  }
+  &__text{
+    width: 72px;
+    border: none;
+    margin:4px;
+    height:27px;
+  }
+}
+
+
+
+.cash{
+  
+}
+
+
+
+.popap-footer{
+  background-color: #e4f7fe;
+  padding: 11px 37px 11px 30px;
+  text-align: right;
+  border-radius: 0 0 3px 3px;
+  margin-top:13px;
+  
+  &-btn{
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    color: #565656;
+    font-size: 13px;
+    display: inline-block;
+    padding: 6px 11px;
+  }
+}
+
+
+
+.fancy-clock{
+  display: inline-block;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+}
+
+
+//////////////// \  popap \  /////////////////////
 
 
 
