@@ -561,6 +561,12 @@ span.backlight-search {
     &:hover{
       background-color: #f4f4f4;
     }
+    &_col{
+      background-color: #fff7f7;
+      &:hover{
+        background-color: #fff7f7;
+      }
+    }
   }
   &__header{
     color: #303030;
@@ -571,6 +577,7 @@ span.backlight-search {
     border-right: 1px solid #e4e4e4;
     padding: 4px 0 7px;
     overflow: hidden;
+    text-align: center;
     &_col5{
       width: 45%;
     }
@@ -630,7 +637,7 @@ span.backlight-search {
   position: relative;
   &-btn{
     display: inline-block;
-    width: 75px;
+    min-width: 75px;
     height: 20px;
     background-color: #e5e5e5;
     border-radius: 3px;
@@ -664,6 +671,11 @@ span.backlight-search {
       border-radius: 3px;
       min-width:150px;
       height:auto;
+    }
+    &_new{
+      background-color: #acacac;
+      color: #fff;
+      padding: 4px 5px;
     }
   }
   &-up{
@@ -776,6 +788,10 @@ span.backlight-search {
   &_red{
     color: #f65a5a;
     font-weight: 700;
+    &_poz{
+      float: right;
+      padding: 0 10px 0 0;
+    }
   }
   &_orange{
     color: #fb7b25;
@@ -934,6 +950,56 @@ span.backlight-search {
 
 
 
+.create-zack{
+  &_btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    min-width: 118px;
+    padding:8px;
+    background-color: #45b0ee;
+    border-radius: 3px;
+    text-align: center;
+    font-size:13px;
+    &_poz{
+      margin:0 0 0 4px;
+    }
+  }
+  &-nav{
+    &__item{
+      display: inline-block;
+      padding: 2px 0 9px;
+      margin:0 15px;
+    }
+    &__link{
+      display: inline-block;
+      font-size:13px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      padding: 9px 0;
+      transition:all 0.3s ease;
+      &-active{
+        border-bottom-color: #fff;
+      }
+      &:hover{
+        border-bottom-color: #fff;
+      }
+    }
+    &_poz{
+      margin: -4px 0 0 54px;
+    }
+  }
+}
+
+
+
+.icon-tim{
+  &_poz{
+    margin: -4px 0 0 5px;
+    float: left;
+  }
+}
 //////////////// \content\ /////////////////////
 
 
@@ -1057,6 +1123,7 @@ span.backlight-search {
 .js-cont-down{
  
 }
+
 
 ////////////////  \ JS  \  /////////////////////
 

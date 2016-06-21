@@ -79,7 +79,30 @@ $(document).ready(function(){
                 .addClass('tab-content__item_active')
         }
     });
+    $('.js-nav-tab .nav-tab_menu__item').bind('click',function () {
+        $(this)
+            .parents('.pages').find('#tab-cont').find('.tab-content__item')
+            .removeClass('tab-content__item_active')
+            .eq($(this).index())
+            .addClass('tab-content__item_active')
+            .parents('.pages').find('#nav-tab').find('.nav-tab__link').removeClass('nav-tab__link-active')
+            .parent('.nav-tab__item')
+            .eq($(this).index()).find('.nav-tab__link').addClass('nav-tab__link-active');
+    });
 
+    
+    $('#create-zack-nav .create-zack-nav__item').bind('click',function () {
+        
+        $('.create-zack-nav__link').removeClass('create-zack-nav__link-active');
+        $(this)
+            .find('.create-zack-nav__link')
+            .addClass('create-zack-nav__link-active')
+            .parents('.pages').find('#create-zack-cont').find('.content__item').removeClass('content__item-active')
+            .eq($(this).index()).addClass('content__item-active');
+        
+    });
+    
+    
 
     ///////////////////////// \ Табы \ /////////////////////////////
     
@@ -187,6 +210,7 @@ $(document).ready(function(){
         }
     });
 
+    
     ///////////////    Удалить результат  поиска   ///////////////
     
     jQuery(function($) {
@@ -595,6 +619,97 @@ $(document).ready(function(){
 
 
     });
+
+
+
+
+
+
+    // jQuery(document).ready(function(){
+    //     var minlen = 2; // минимальная длина слова
+    //     var keyint = 1000; // интервал между нажатиями клавиш
+    //     var term = '';
+    //     var n = 0;
+    //     var time_keyup = 0;
+    //     var time_search = 0;
+    //    
+    //     var inputSearsh6 = $('.js-searsh__input_6');                                 // инпут
+    //     var classBg = $('span.backlight-search');                                   // класс подсветки
+    //     var contentSearsh6 = $('.js-searsh__cont_6 .table__cell');                   // область поиска
+    //
+    //
+    //     function dosearch() {
+    //         term = inputSearsh6.val();
+    //         classBg.each(function(){ //удаляем старую подсветку
+    //             jQuery(this).after(jQuery(this).html()).remove();
+    //         });
+    //
+    //         var t = '';
+    //         contentSearsh6.each(function(){ // в селекторе задаем область поиска
+    //             jQuery(this).html(jQuery(this).html().replace(new RegExp(term, 'ig'), '<span class="backlight-search">$&</span>')); // выделяем найденные фрагменты
+    //             n = classBg.length; // количество найденных фрагментов
+    //             //console.log('n = '+n);
+    //         });
+    //
+    //
+    //     }
+    //
+    //     inputSearsh6.keyup(function(){
+    //         var d1 = new Date();
+    //         time_keyup = d1.getTime();
+    //         if (inputSearsh6.val()!=term) // проверяем, изменилась ли строка
+    //             if (inputSearsh6.val().length>=minlen) { // проверяем длину строки
+    //                 setTimeout(function(){ // ждем следующего нажатия
+    //
+    //                     setTimeout(function (e) {
+    //
+    //                         jQuery('div.jq-checkbox').each(function(){ //удаляем старую подсветку
+    //                             jQuery(this).after(jQuery(this).html()).remove();
+    //                         });
+    //                         jQuery('div.jq-checkbox__div').each(function(){ //удаляем старую подсветку
+    //                             jQuery(this).after(jQuery(this).html()).remove();
+    //                         });
+    //
+    //                         $('.table__row input[type="checkbox"]').styler();
+    //
+    //
+    //                         ////////////////////////  Статус btn  /////////////////////////////
+    //
+    //                         $('.status-btn').bind('click',function (e) {
+    //                             $(this).nextAll('.status-up').removeClass('g-hidden');
+    //
+    //                         });
+    //
+    //                         jQuery(function($){
+    //                             $(document).mouseup(function (e){ // событие клика по веб-документу
+    //                                 var div = $(".status-up"); // тут указываем ID элемента
+    //                                 if (!div.is(e.target) // если клик был не по нашему блоку
+    //                                     && div.has(e.target).length === 0) { // и не по его дочерним элементам
+    //                                     div.addClass('g-hidden'); // скрываем его
+    //                                 }
+    //                             });
+    //                         });
+    //
+    //                         //////////////////////// \ Статус btn \ /////////////////////////////
+    //
+    //
+    //                     },100);
+    //
+    //                     var d2 = new Date();
+    //                     time_search = d2.getTime();
+    //                     if (time_search-time_keyup>=keyint) // проверяем интервал между нажатиями
+    //                         dosearch(); // если все в порядке, приступаем к поиску
+    //                 }, keyint);
+    //             }
+    //     });
+    //
+    //
+    // });
+    
+    
+    
+    
+    
     
     
     
