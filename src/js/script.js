@@ -103,6 +103,47 @@ $(document).ready(function(){
     });
     
     
+    
+    
+
+    $('.tab-menu__nav .tab-menu__item').bind('click',function () {
+        
+        $('.tab-menu__link').removeClass('tab-menu__link-active');
+        
+        $(this).find(".tab-menu__link").addClass('tab-menu__link-active')
+            .parents('.tab-menu').find('.tab-cont__item').removeClass('tab-cont__item-active')
+            .eq($(this).index()).addClass('tab-cont__item-active');
+        
+    });
+
+    if($('.table-pst__scroll').height() > 609){
+        $('.table-pst__scroll').addClass('table-pst__scroll-sh');
+    }else {
+        $('.table-pst__scroll').removeClass('table-pst__scroll-sh');
+    }
+    
+    $('.nav-pst__item').bind('click',function () {
+        
+        
+        $('.nav-pst__item').find('.nav-pst__link').removeClass('nav-pst__link-active');
+        $(this).find('.nav-pst__link').addClass('nav-pst__link-active')
+            .parents('.tab-pst').find('.cont-pst__item').removeClass('cont-pst__item-active')
+            .eq($(this).index()).addClass('cont-pst__item-active');
+
+         setTimeout(function () {
+             
+             if($('.cont-pst__item-active .table-pst__scroll').height() > 609){
+                 $('.cont-pst__item-active .table-pst__scroll').addClass('table-pst__scroll-sh');
+             }else {
+                 $('.cont-pst__item-active .table-pst__scroll').removeClass('table-pst__scroll-sh');
+             }
+         },100)
+        
+        
+    });
+    
+    
+    
 
     ///////////////////////// \ Табы \ /////////////////////////////
     
@@ -757,9 +798,15 @@ $(document).ready(function(){
     //////////////////////// \  fancybox \ /////////////////////////////
     
     
-    // $('.menu__up').bind("mouseenter", function (e) {
-    //     $(this).next('.nav-tab_menu').css({"display":"block"})
-    // })
+    
+    ////////////////////////    castum scroller   /////////////////////////////
+
+    $('.table-pst__scroll').mCustomScrollbar();
+    
+    //////////////////////// \  castum scroller \ /////////////////////////////
+    
+    
+    
     
     
     
