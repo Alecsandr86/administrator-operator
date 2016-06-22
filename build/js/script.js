@@ -122,10 +122,10 @@ $(document).ready(function(){
         $('.table-pst__scroll').removeClass('table-pst__scroll-sh');
     }
     
-    $('.nav-pst__item').bind('click',function () {
+    $('.js-pst__item').bind('click',function () {
         
         
-        $('.nav-pst__item').find('.nav-pst__link').removeClass('nav-pst__link-active');
+        $('.js-pst__item.nav-pst__item').find('.nav-pst__link').removeClass('nav-pst__link-active');
         $(this).find('.nav-pst__link').addClass('nav-pst__link-active')
             .parents('.tab-pst').find('.cont-pst__item').removeClass('cont-pst__item-active')
             .eq($(this).index()).addClass('cont-pst__item-active');
