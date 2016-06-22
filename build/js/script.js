@@ -143,6 +143,16 @@ $(document).ready(function(){
     });
     
     
+    $('.nav-addres__item').bind('click',function () {
+        
+        $('.nav-addres__item').find('.nav-addres__link').removeClass('nav-addres__link-active');
+        
+        $(this)
+            .find('.nav-addres__link').addClass('nav-addres__link-active')
+            .parents('.tab-addres').find('.cont-addres__item').removeClass('cont-addres__item-active')
+            .eq($(this).index()).addClass('cont-addres__item-active');
+    });
+    
     
 
     ///////////////////////// \ Табы \ /////////////////////////////
@@ -152,7 +162,7 @@ $(document).ready(function(){
     /////////////////////////  Стилезация форм  /////////////////////////////
     $(function() {
 
-        $('input[type="checkbox"], select').styler();
+        $('input[type="checkbox"], select, input[type="number"]').styler();
 
     });
 
@@ -780,6 +790,28 @@ $(document).ready(function(){
     
     
     
+    $('.cont-addres__btn-up').bind('click',function () {
+        
+        
+        var heiBtn = $(this).prevAll('.cont-addres__list').find('.cont-addres__wr').height();
+        var clActiv = $(this).find('.trigger-arrow').hasClass('trigger-arrow-active');
+        
+        if(heiBtn > 197 && !clActiv){
+            
+            $(this).find('.trigger-arrow').addClass('trigger-arrow-active')
+                .parents($(this)).prevAll('.cont-addres__list').animate({'height': + (heiBtn + 10)},700);
+            
+        }
+        else if(clActiv) {
+            
+            $(this).find('.trigger-arrow').removeClass('trigger-arrow-active')
+                .parents($(this)).prevAll('.cont-addres__list').animate({'height': 197},700);
+            
+        }
+        
+        
+    });
+    
     
     //////////////////////// \  btn \ /////////////////////////////
     
@@ -804,8 +836,6 @@ $(document).ready(function(){
     $('.table-pst__scroll').mCustomScrollbar();
     
     //////////////////////// \  castum scroller \ /////////////////////////////
-    
-    
     
     
     
