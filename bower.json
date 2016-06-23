@@ -17,6 +17,8 @@
     "holmes.js": "^1.8.0",
     "bower": "*",
     "install": "^1.0.4",
-    "malihu-custom-scrollbar-plugin": "^3.1.4"
+    "malihu-custom-scrollbar-plugin": "^3.1.4",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "moment": "^2.13.0"
   }
 }

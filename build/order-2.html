@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/jquery.formstyler.css">
     <link rel="stylesheet" href="js/source/jquery.fancybox.css">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="js/datetimepicker/daterangepicker.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -79,7 +80,7 @@
 
                     <label class="form__item order__tel">
                         <input  disabled class="form__input" type="tel" value="+7 (911) 123-23-00">
-                        <a class="icon-inp-clock" href="javascript: void(0);"></a>
+                        <a class="icon-inp-clock icon-inp-clock-pos" href="javascript: void(0);"></a>
                     </label>
                     
                     <a class="form-btn__add-phone form-btn__add-phone_poz" href="javascript: void(0);">добавить телефон</a>
@@ -939,32 +940,766 @@
                     <div class="sentence__table">
                         <table class="table table-pst sentence-table">
                             <tr class="table-pst__row">
-                                <td class="table-pst__header sentence-table__first">Наименование</td>
-                                <td class="table-pst__header">Кол-во</td>
-                                <td class="table-pst__header">Цена р.</td>
-                                <td class="table-pst__header">Сумма р.</td>
-                                <td class="table-pst__header sentence-table__last">Кг.</td>
+                                <td class="table-pst__header table-pst__header_padd table-pst__header_padd-first sentence-table__first">Наименование</td>
+                                <td class="table-pst__header table-pst__header_padd table-tac">Кол-во</td>
+                                <td class="table-pst__header table-pst__header_padd">Цена р.</td>
+                                <td class="table-pst__header table-pst__header_padd">Сумма р.</td>
+                                <td class="table-pst__header table-pst__header_padd ">Кг.</td>
+                                <td class="table-pst__header table-pst__header_padd"></td>
                             </tr>
-                            <tr>
-                                <td class="table-pst__cell table__cell-bdb table-tac" colspan="5">
-                                    <span class="table__no-tov">Нет добавленных товаров</span>
+                            <tr class="table-pst__row">
+                                <!--<td class="table-pst__cell table__cell-bdb table-tac" colspan="5">-->
+                                    <!--<span class="table__no-tov">Нет добавленных товаров</span>-->
+                                <!--</td>-->
+                                
+                                <td class="table-pst__cell table-pst__cell_padd sentence-table__first">
+                                    <div class="titul">
+                                        <a class="icon-hint icon-hint_pos icon-hint_none" href="javascript: void(0);"></a>
+                                        <div class="titul-popap">
+                                            <table class="titul-table">
+                                                <thead class="titul-table__header">
+                                                    <tr class="titul-table__row titul-table__row_head">
+                                                        <td class="titul-table__cell titul-table__cell_first titul-table__cell-header"></td>
+                                                        <td class="titul-table__cell titul-table__cell-header">Гр.</td>
+                                                        <td class="titul-table__cell titul-table__cell-header">Цена р.</td>
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tbody>
+                                                
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                        <td class="titul-table__cell"> 40 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+                                                    
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+                                                    
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                        <td class="titul-table__cell"> 40 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+
+                                                    <tr class="titul-table__row">
+                                                        <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                        <td class="titul-table__cell"> 50 </td>
+                                                        <td class="titul-table__cell"> 69 </td>
+                                                    </tr>
+                                                
+                                                </tbody>
+                                            </table>
+                                            <div class="table-btn">
+                                                <a class="btn" href="javascript: void(0);">Закрыть</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    Пицца Барселона
+                                </td>
+                                <td class="table-pst__cell">
+                                    <div class="number-plus-minus npmber-plus-minus_hover">
+                                        <input type="number" value="1" />
+                                    </div>
+                                </td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">549</td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">549</td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">0,8</td>
+                                <td class="table-pst__cell table-pst__cell_padd">
+                                    <a class="icon-inp-clock2" href="javascript: void(0);"></a>
                                 </td>
                             </tr>
-                            <tr class="table-pst__row table-pst__row">
-                                <td class="table-pst__cell sentence-table__first">
+                            
+                            <tr class="table-pst__row">
+                                
+                                <td class="table-pst__cell table-pst__cell_padd sentence-table__first">
+                                    <div class="titul">
+                                        <a class="icon-hint icon-hint_pos" href="javascript: void(0);"></a>
+                                        <div class="titul-popap">
+                                            <table class="titul-table">
+                                                <thead class="titul-table__header">
+                                                <tr class="titul-table__row titul-table__row_head">
+                                                    <td class="titul-table__cell titul-table__cell_first titul-table__cell-header"></td>
+                                                    <td class="titul-table__cell titul-table__cell-header">Гр.</td>
+                                                    <td class="titul-table__cell titul-table__cell-header">Цена р.</td>
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                    <td class="titul-table__cell"> 40 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                    <td class="titul-table__cell"> 40 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                            <div class="table-btn">
+                                                <a class="btn" href="javascript: void(0);">Закрыть</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    Осетин. пирог с капустой и яйцом
+                                </td>
+                                <td class="table-pst__cell">
+                                    <div class="number-plus-minus npmber-plus-minus_hover">
+                                        <input type="number" value="1" />
+                                    </div>
+                                </td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">
+                                    <span class="time time_orange">333</span>
+                                </td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">333</td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">0,8</td>
+                                <td class="table-pst__cell table-pst__cell_padd">
+                                    <a class="icon-inp-clock2" href="javascript: void(0);"></a>
+                                </td>
+                            </tr>
+
+                            <tr class="table-pst__row">
+
+                                <td class="table-pst__cell table-pst__cell_padd sentence-table__first">
+                                    <div class="titul">
+                                        <a class="icon-hint icon-hint_pos" href="javascript: void(0);"></a>
+                                        <div class="titul-popap">
+                                            <table class="titul-table">
+                                                <thead class="titul-table__header">
+                                                <tr class="titul-table__row titul-table__row_head">
+                                                    <td class="titul-table__cell titul-table__cell_first titul-table__cell-header"></td>
+                                                    <td class="titul-table__cell titul-table__cell-header">Гр.</td>
+                                                    <td class="titul-table__cell titul-table__cell-header">Цена р.</td>
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                    <td class="titul-table__cell"> 40 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                    <td class="titul-table__cell"> 40 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                            <div class="table-btn">
+                                                <a class="btn" href="javascript: void(0);">Закрыть</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    Осетин. пирог с картофелем
+                                </td>
+                                <td class="table-pst__cell">
+                                    <div class="number-plus-minus npmber-plus-minus_hover">
+                                        <input type="number" value="1" />
+                                    </div>
+                                </td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">
+                                    <span class="time time_orange">333</span>
+                                </td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">333</td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac ">0,8</td>
+                                <td class="table-pst__cell table-pst__cell_padd">
+                                    <a class="icon-inp-clock2" href="javascript: void(0);"></a>
+                                </td>
+                            </tr>
+
+                            <tr class="table-pst__row">
+
+                                <td class="table-pst__cell table-pst__cell_padd sentence-table__first">
+                                    <div class="titul">
+                                        <a class="icon-hint icon-hint_pos" href="javascript: void(0);"></a>
+                                        <div class="titul-popap">
+                                            <table class="titul-table">
+                                                <thead class="titul-table__header">
+                                                <tr class="titul-table__row titul-table__row_head">
+                                                    <td class="titul-table__cell titul-table__cell_first titul-table__cell-header"></td>
+                                                    <td class="titul-table__cell titul-table__cell-header">Гр.</td>
+                                                    <td class="titul-table__cell titul-table__cell-header">Цена р.</td>
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                    <td class="titul-table__cell"> 40 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                    <td class="titul-table__cell"> 40 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                            <div class="table-btn">
+                                                <a class="btn" href="javascript: void(0);">Закрыть</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    Осетин. пирог с картофелем и грибами
+                                </td>
+                                <td class="table-pst__cell">
+                                    <div class="number-plus-minus npmber-plus-minus_hover">
+                                        <input type="number" value="1" />
+                                    </div>
+                                </td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">
+                                    <span class="time time_orange">333</span>
+                                </td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">333</td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac ">0,8</td>
+                                <td class="table-pst__cell table-pst__cell_padd">
+                                    <a class="icon-inp-clock2" href="javascript: void(0);"></a>
+                                </td>
+                            </tr>
+
+                            <tr class="table-pst__row">
+
+                                <td class="table-pst__cell table-pst__cell_padd sentence-table__first">
+                                    <div class="titul">
+                                        <a class="icon-hint icon-hint_pos" href="javascript: void(0);"></a>
+                                        <div class="titul-popap">
+                                            <table class="titul-table">
+                                                <thead class="titul-table__header">
+                                                <tr class="titul-table__row titul-table__row_head">
+                                                    <td class="titul-table__cell titul-table__cell_first titul-table__cell-header"></td>
+                                                    <td class="titul-table__cell titul-table__cell-header">Гр.</td>
+                                                    <td class="titul-table__cell titul-table__cell-header">Цена р.</td>
+                                                </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                    <td class="titul-table__cell"> 40 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Бекон </td>
+                                                    <td class="titul-table__cell"> 40 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Ветчина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Говядина </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Креветки тегровые </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Курица маринованая </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Лук красный </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Охотничие колбаски </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                <tr class="titul-table__row">
+                                                    <td class="titul-table__cell titul-table__cell_first"> Пепперони </td>
+                                                    <td class="titul-table__cell"> 50 </td>
+                                                    <td class="titul-table__cell"> 69 </td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                            <div class="table-btn">
+                                                <a class="btn" href="javascript: void(0);">Закрыть</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b>Осетин. сладкий с вишней 
+                                        <span class="time time_green">(в подарок)</span>
+                                    </b>
+                                </td>
+                                <td class="table-pst__cell">
+                                    <div class="number-plus-minus npmber-plus-minus_hover">
+                                        <input type="number" value="1" />
+                                    </div>
+                                </td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac">
+                                    0
+                                </td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac"></td>
+                                <td class="table-pst__cell table-pst__cell_padd table-tac "></td>
+                                <td class="table-pst__cell table-pst__cell_padd">
+                                    <a class="icon-inp-clock2" href="javascript: void(0);"></a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-pst__row table-pst__footer">
+                                <td class="table-pst__cell sentence-table__first sentence-table__first_foot">
                                     <i class="icon-user_min"></i> Наборы посуды 
                                 </td>
                                 <td class="table-pst__cell table-tac">1</td>
                                 <td class="table-pst__cell table-tac">0</td>
                                 <td class="table-pst__cell table-tac"></td>
-                                <td class="table-pst__cell table-tac sentence-table__last"></td>
+                                <td class="table-pst__cell table-tac "></td>
+                                <td class="table-pst__cell"></td>
                             </tr>
                         </table>
+                        <div class="box-shares">
+                            <ul class="nav-pst box-shares__item g-both">
+                                <li class="nav-pst__item">
+                                    <a class="nav-pst__link nav-pst__link_first nav-pst__link-active" href="javascript: void(0);">3 за 999 руб.</a>
+                                </li>
+                                <li class="nav-pst__item">
+                                    <a class="nav-pst__link nav-pst__link_last" href="javascript: void(0);">Напиток  в подарок</a>
+                                </li>
+
+                                <li class="nav-pst__item js-titul">
+                                    <a class="nav-pst__link nav-pst__link_bdrs nav-pst__link_mar nav-pst__link-active nav-pst__link-active_bg" href="javascript: void(0);">Пирог в подарок</a>
+                                    <ul class="titul-pst">
+                                       <li class="titul-pst__item">
+                                           <a class="titul-pst__link" href="javascript: void(0);">Осетин. сладкий с вишней</a>
+                                       </li>
+                                        <li class="titul-pst__item">
+                                            <a class="titul-pst__link" href="javascript: void(0);">Осетин. сладкий с клубникой</a>
+                                        </li>
+                                        <li class="titul-pst__item">
+                                            <a class="titul-pst__link" href="javascript: void(0);">Осетин. сладкий с малиной</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-pst__item">
+                                    <a class="nav-pst__link nav-pst__link_first" href="javascript: void(0);">Скидка</a>
+                                </li>
+                                <li class="nav-pst__item">
+                                    <a class="nav-pst__link nav-pst__link_last" href="javascript: void(0);">10%</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     
                     <div class="sentence__payment payment g-both">
                         
                         <div class="payment__nav">
+                            
+                            <!--<ul class="tab-pst__nav tab-pst_inline nav-pst g-both">-->
+                                <!--<li class="nav-pst__item">-->
+                                    <!--<a class="nav-pst__link nav-pst__link_first nav-pst__link-active" href="javascript: void(0);">Наличные</a>-->
+                                <!--</li>-->
+                                <!--<li class="nav-pst__item">-->
+                                    <!--<a class="nav-pst__link nav-pst__link_last" href="javascript: void(0);">Моб. терминал</a>-->
+                                <!--</li>-->
+
+                                <!--<li class="nav-pst__item">-->
+                                    <!--<a class="nav-pst__link nav-pst__link_bdrs nav-pst__link_mar" href="javascript: void(0);">Онлайн</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                            <!---->
+                            <!--<ul class="tab-pst__nav tab-pst_inline nav-pst g-both">-->
+                                <!---->
+                                <!--<li class="nav-pst__item">-->
+                                    <!--<a class="nav-pst__link nav-pst__link_bdrs" href="javascript: void(0);">Нужна сдача</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                            
                             <ul class="tab-pst__nav tab-pst_inline nav-pst g-both">
                                 <li class="nav-pst__item">
                                     <a class="nav-pst__link nav-pst__link_first nav-pst__link-active" href="javascript: void(0);">Наличные</a>
@@ -979,16 +1714,26 @@
                             </ul>
                             
                             <ul class="tab-pst__nav tab-pst_inline nav-pst g-both">
-                                
                                 <li class="nav-pst__item">
-                                    <a class="nav-pst__link nav-pst__link_bdrs" href="javascript: void(0);">Нужна сдача</a>
+                                    <a class="nav-pst__link nav-pst__link_first nav-pst__link-active" href="javascript: void(0);">500</a>
+                                </li>
+                                <li class="nav-pst__item">
+                                    <a class="nav-pst__link" href="javascript: void(0);">1000</a>
+                                </li>
+                                <li class="nav-pst__item">
+                                    <a class="nav-pst__link nav-pst__link_last" href="javascript: void(0);">5000</a>
+                                </li>
+                                <li class="nav-pst__item">
+                                    <input id="date" class="form__input form__input_cas-nav" type="text" placeholder="Сумма">
                                 </li>
                             </ul>
+                            
                         </div>
-
+                        
                         <div class="payment__cont pay-cont">
                             <p class="pay-cont__text">К оплате</p>
-                            <span class="pay-cont__sum">0 <span  class="pay-cont__val">руб.</span></span>
+                            <span class="pay-cont__sum">1548 <span  class="pay-cont__val">руб.</span></span>
+                            <p class="pay-cont__text"> <b>Сдача 452 руб.</b></p>
                         </div>
                         
                     </div>
@@ -1045,6 +1790,10 @@
   <script src="js/holmes.js"></script>
   <script src="js/source/jquery.fancybox.pack.js"></script>
   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/datetimepicker/moment.min.js"></script>
+  <script src="js/datetimepicker/ru.js"></script>
+  <script src="js/datetimepicker/daterangepicker.js"></script>
+  <!--<script src="js/bootstrap-datepicker.ru.js"></script>-->
   <script src="js/script.js"></script>
 
 </body>

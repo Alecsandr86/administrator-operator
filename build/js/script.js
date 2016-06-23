@@ -13,6 +13,24 @@ $(document).ready(function(){
     } catch(err) {
 
     };
+
+
+    ////////////////    datetimepicker    /////////////////////
+    
+    
+    
+    
+    $('#date').daterangepicker({
+        "singleDatePicker": true,
+    });
+
+    
+    
+    
+    //////////////// \  datetimepicker \  /////////////////////
+    
+    
+    
     
     ///////////////////// скрытый пароль //////////////////////////
     
@@ -160,12 +178,14 @@ $(document).ready(function(){
     
     
     /////////////////////////  Стилезация форм  /////////////////////////////
-    $(function() {
+    setTimeout(function () {
+        $(function() {
 
-        $('input[type="checkbox"], select, input[type="number"]').styler();
+            $('input[type="checkbox"], select, input[type="number"]').styler();
 
-    });
-
+        });
+    },1000);
+    
     ///////////////////////// \ Стилезация форм \ /////////////////////////////
     
     
@@ -761,10 +781,6 @@ $(document).ready(function(){
     
     
     
-    
-    
-    
-    
     ////////////////////////  btn  /////////////////////////////
     
     $('.status-btn').bind('click',function (e) {
@@ -774,7 +790,7 @@ $(document).ready(function(){
     
     jQuery(function($){
         $(document).mouseup(function (e){ // событие клика по веб-документу
-            var div = $(".status-up"); // тут указываем ID элемента
+            var div = $(".status-up"); // тут указываем элемента
             if (!div.is(e.target) // если клик был не по нашему блоку
                 && div.has(e.target).length === 0) { // и не по его дочерним элементам
                 div.addClass('g-hidden'); // скрываем его
@@ -811,8 +827,25 @@ $(document).ready(function(){
         
         
     });
+
+
+
+    $('.js-titul').bind('click',function () {
+        $(this).find('.titul-pst').fadeToggle()
+    });
+
+    jQuery(function($){
+        $(document).mouseup(function (e){ // событие клика по веб-документу
+            var div = $(".js-titul"); // тут указываем элемента
+            if (!div.is(e.target) // если клик был не по нашему блоку
+                && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                div.find('.titul-pst').fadeOut(); // скрываем его
+            }
+        });
+    });
     
-    
+
+
     //////////////////////// \  btn \ /////////////////////////////
     
     
@@ -836,11 +869,12 @@ $(document).ready(function(){
     $('.table-pst__scroll').mCustomScrollbar();
     
     //////////////////////// \  castum scroller \ /////////////////////////////
+
     
     
-    
-    
-    
+            
+        
+   
     
     
 });

@@ -316,11 +316,20 @@
 
 .icon-inp-clock{
   display: inline-block;
-  position: absolute;
-  top: 1px;
-  right: -47px;
+  vertical-align: middle;
+  &-pos{
+    position: absolute;
+    top: 1px;
+    right: -47px;
+  }
 }
 
+
+
+.icon-inp-clock2{
+  display: inline-block;
+  vertical-align: middle;
+}
 
 
 .icon-help{
@@ -329,6 +338,21 @@
   margin: 0 28px 0 0;
 }
 
+
+.icon-hint{
+  display: inline-block;
+  vertical-align: middle;
+  &_pos{
+    margin:0 2px 0 8px;
+  }
+  &_none{
+    opacity:0!important;
+    cursor: default;
+    + .titul-popap{
+      display: none!important;
+    }
+  }
+}
 
 
 
@@ -578,6 +602,11 @@
     border: 1px solid #e4e4e4;
     border-radius: 3px;
     box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.16);
+    &_cas-nav{
+      margin:0 10px;
+      height:27px;
+      width:113px;
+    }
     &:focus{
       border: 2px solid #98dcff;
       -webkit-box-shadow: none;
@@ -764,7 +793,7 @@ span.backlight-search {
     }
   }
   &-tac{
-    text-align: center;
+    text-align: center!important;
   }
   &__no-tov{
     color: #c0c0c0;
@@ -773,8 +802,26 @@ span.backlight-search {
     line-height: 30px;
     display: inline-block;
   }
+  &-btn{
+    text-align: right;
+    padding: 20px 30px;
+  }
 }
 
+
+
+.btn{
+  border: 1px solid #d9d9d9;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 10px;
+  font-size:13px;
+  text-decoration: none;
+  color: #565656;
+  text-align: center;
+}
 
 
 .status{
@@ -1304,11 +1351,16 @@ span.backlight-search {
   }
 }
 
+
+
+
 .nav-pst{
   &__item{
     display: inline-block;
     float: left;
+    position: relative;
   }
+ 
   &__link{
     display: inline-block;
     text-decoration: none;
@@ -1341,6 +1393,9 @@ span.backlight-search {
     }
     &-active{
       background-color: #e4f6ff;
+      &_bg{
+        background-color: #e0f1fa;
+      }
     }
   }
 }
@@ -1361,8 +1416,16 @@ span.backlight-search {
   width: 539px;
   border: none;
   &__row{
+    .icon-hint,
+    .icon-inp-clock2{
+      opacity:0;
+    }
     &:hover{
-      background-color:#f5f5f5; 
+      background-color:#f5f5f5;
+      .icon-hint,
+      .icon-inp-clock2{
+        opacity:1;
+      }
     }
   }
   &__header{
@@ -1370,9 +1433,19 @@ span.backlight-search {
     border-bottom: 1px solid #eae9e8;
     padding: 10px 14px;
     text-align: left;
+    &_padd{
+      padding:10px;
+      &-first{
+        padding-left:29px;
+      }
+    }
   }
   &__cell{
     padding: 10px 14px;
+    
+    &_padd{
+      padding:0;
+    }
     &-tac{
       text-align: center;
     }
@@ -1417,6 +1490,14 @@ span.backlight-search {
   }
   &_four{
     width:11%;
+  }
+
+  &__footer{
+    border-top: 1px solid #f5f5f5;
+    border-bottom: 1px solid #e7e7e7;
+    &:hover{
+      background-color: #fff;
+    }
   }
 }
 
@@ -1467,7 +1548,10 @@ span.backlight-search {
   
   width:100%;
   &__first{
-    width: 50%;
+    width: 44%;
+    &_foot{
+      padding-left:30px;
+    }
   }
   &__last{
     width:10%;
@@ -1492,9 +1576,13 @@ span.backlight-search {
 
 .pay-cont{
   padding: 28px 0;
+  width:153px;
+  float: right;
+  text-align: left;
   &__text{
     color: #565656;
     font-size: 13px;
+    line-height:20px;
   }
   &__sum{
     font-size: 30px;
@@ -1543,6 +1631,12 @@ span.backlight-search {
     text-decoration: none;
     vertical-align: middle;
     margin-bottom: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover{
+      background-color: #50b612;
+      box-shadow: 0 2px 0 #52942a;
+    }
   }
   &__text{
     color: #808080;
@@ -1760,6 +1854,9 @@ span.backlight-search {
       .jq-number__field{
         border-color: #e4e4e4;
         background-color: #fff;
+        &:hover{
+          background-color: #f6f6f6;
+        }
       }
       .jq-number__field{
         input{
@@ -1824,6 +1921,125 @@ span.backlight-search {
     }
   }
 }
+
+
+.box-shares{
+  
+  &__item{
+    padding: 10px 22px 13px;
+  }
+}
+
+
+
+.titul{
+  display: inline-block;
+  position: relative;
+  &:hover{
+    .titul-popap{
+      display: block;
+    }
+  }
+  &-popap{
+    display: none;
+    position: absolute;
+    top: -50px;
+    left: -290px;
+    width: 284px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 8px 27px rgba(0, 0, 0, 0.28);
+    &:before{
+      content: '';
+      display: inline-block;
+      width:0;
+      height:0;
+      border-left: 9px solid #fff;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      position: absolute;
+      top: 54px;
+      right:-9px;
+    }
+  }
+  &-table{
+    width:100%;
+    &__header{
+      border-bottom: 1px solid #e7e7e7;
+      color: #858585;
+    }
+    &__row{
+      
+      &:hover{
+        background-color: #e4f7fe;
+      }
+      
+      &_head{
+        &:hover{
+          background-color: #fff;
+        }
+      }
+    }
+    &__cell{
+      font-size:13px;
+      padding:10px 0;
+      text-align: center;
+     
+      &_first{
+        width:60%;
+        text-align: left;
+        padding-left:20px;
+      }
+    }
+  }
+  
+  &-pst{
+    display: none;
+    position: absolute;
+    top: -135px;
+    left:-50%;
+    margin: 0 0 0 15px;
+    width: 226px;
+    min-height: 115px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 8px 27px rgba(0, 0, 0, 0.35);
+    padding:10px 0;
+    transition: opacity 0.7s ease 1s;
+    &:before{
+      content: '';
+      display: inline-block;
+      width:0;
+      height:0;
+      border-top: 9px solid #fff;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      margin-left:-5px;
+    }
+    &__item{
+      display: inline-block;
+      width:100%;
+    }
+    &__link{
+      display: inline-block;
+      width:100%;
+      font-size:13px;
+      color: #565656;
+      text-decoration: none;
+      padding:10px 10px 10px 20px;
+      &:hover{
+        background-color: #e4f7fe;
+      }
+    }
+  }
+  
+}
+
+
+
 //////////////// \content\ /////////////////////
 
 
@@ -1853,6 +2069,7 @@ span.backlight-search {
     text-align: center;
   }
   &-nav{
+   
    &_bord{
      border-right: 1px solid #474747;
    }
@@ -1861,6 +2078,7 @@ span.backlight-search {
       line-height:70px;
       padding:0 15px;
       font-size:13px;
+     
       &_bord{
         border-left: 1px solid #474747;
       }
@@ -2078,6 +2296,76 @@ span.backlight-search {
 
 
 //////////////// \  popap \  /////////////////////
+
+
+
+
+////////////////    datetimepicker    /////////////////////
+
+
+#date{
+  position: relative;
+}
+
+
+
+.month{
+  color: #5e5e5e;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 29px;
+  text-transform: capitalize;
+}
+
+
+
+.calendar__days-week{
+ 
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #5e5e5e!important;
+}
+
+
+
+.calendar__tbody{
+  position: relative;
+  &:before{
+    content: '';
+    display: inline-block;
+    width:100%;
+    height:1px;
+    background-color: #e0e0e0;
+    position: absolute;
+    top:-5px;
+    left:0;
+  }
+  &:after{
+    content: '';
+    display: inline-block;
+    width:100%;
+    height:1px;
+    background-color: #e0e0e0;
+    position: absolute;
+    bottom:-5px;
+    left:0;
+  }
+}
+
+
+
+.calendar-btn{
+  text-align: center;
+  padding:10px;
+}
+
+
+
+//////////////// \  datetimepicker \  /////////////////////
+
+
 
 
 
