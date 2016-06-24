@@ -15,19 +15,6 @@ $(document).ready(function(){
     };
 
 
-    ////////////////    datetimepicker    /////////////////////
-    
-    
-    
-    
-    $('#date').daterangepicker({
-        "singleDatePicker": true,
-    });
-
-    
-    
-    
-    //////////////// \  datetimepicker \  /////////////////////
     
     
     
@@ -870,11 +857,28 @@ $(document).ready(function(){
     
     //////////////////////// \  castum scroller \ /////////////////////////////
 
+
+
+
+    ////////////////    datetimepicker    /////////////////////
+
     
     
-            
-        
-   
+    
+    var $date = $('#date').datetimepicker({
+        format: 'DD/MM/YYYY'
+    });
+    
+
+    
+    
+    // $date.on("dp.show",function (e) {
+    //    
+    // });
+    
+    
+
+    //////////////// \  datetimepicker \  /////////////////////         
     
     
 });

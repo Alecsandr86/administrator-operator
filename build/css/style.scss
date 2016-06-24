@@ -2356,11 +2356,158 @@ span.backlight-search {
 
 
 
-.calendar-btn{
-  text-align: center;
-  padding:10px;
+
+
+.applyBtn{
+  background-color: #fff;
+  display: inline-block;
 }
 
+
+
+
+//////////////////////////////////////////////////////////
+
+
+.dropdown-menu_cast{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 8px 27px rgba(0, 0, 0, 0.28);
+  border: none;
+  width: 271px!important;
+  padding:0!important;
+}
+
+.time-list{
+  border-bottom: 1px solid #e0e0e0;
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__item{
+    width:50%;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding: 2px 0 8px;
+    &-active{
+      background-color: #d9e9f2;
+    }
+  }
+  &__h{
+    display: block;
+    color: #565656;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: 700;
+    padding:5px 0;
+  }
+  &__input{
+    display: inline-block;
+    width:60px;
+    height:32px;
+  }
+}
+
+
+.time-tbody{
+  position: relative;
+  &:before{
+    content: '';
+    display: inline-block;
+    width:100%;
+    height:1px;
+    background-color: #e0e0e0;
+    position: absolute;
+    top:-5px;
+    left:0;
+  }
+  &:after{
+    content: '';
+    display: inline-block;
+    width:100%;
+    height:1px;
+    background-color: #e0e0e0;
+    position: absolute;
+    bottom:-5px;
+    left:0;
+  }
+  
+}
+
+
+.bootstrap-datetimepicker-widget .picker-switch {
+  color: #5e5e5e;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 29px;
+  text-transform: capitalize;
+}
+
+.datepicker{
+  padding: 15px 0 0;
+}
+
+
+.bootstrap-datetimepicker-widget table .dow {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #5e5e5e!important;
+}
+
+.bootstrap-datetimepicker-widget table td.day {
+  height: 35px;
+  line-height: 35px;
+  width: 35px;
+}
+.bootstrap-datetimepicker-widget table td,
+.bootstrap-datetimepicker-widget table th{
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.bootstrap-datetimepicker-widget table td.active, 
+.bootstrap-datetimepicker-widget table td.active:hover{
+  background-color: #00b8ec;
+  text-shadow: none;
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+  display: none;
+}
+
+
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover {
+  background: transparent;
+}
+
+
+.calendar-btn{
+  text-align: center;
+  float: none !important;
+  width: 145px!important;
+  height: 30px!important;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  margin: 10px 0!important;
+
+  color: #565656;
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 7px!important;
+  &:hover{
+    background-color: transparent!important;
+  }
+}
 
 
 //////////////// \  datetimepicker \  /////////////////////

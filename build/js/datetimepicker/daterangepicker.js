@@ -66,7 +66,7 @@
             direction: 'ltr',
             format: 'MM/DD/YYYY',
             separator: ' - ',
-            applyLabel: 'Apply',
+            applyLabel: 'Подтвердить время',
             cancelLabel: 'Cancel',
             weekLabel: 'W',
             customRangeLabel: 'Custom Range',
@@ -103,10 +103,10 @@
                       '</div>' +
                     '</div>' +
                     '<div class="calendar-table"></div>' +
-                    '<div class="calendar-btn">'+
-                        '<a class="btn" href="javascript: void(0);">'+
+                    '<div class="calendar-btn ranges">'+
+                        '<button class="applyBtn btn" type="button">'+
                             'Подтвердить время'+ 
-                        '</a>'+
+                        '</button>'+
                     '</div>'+
                 '</div>' +
                 '<div class="calendar right">' +
@@ -122,7 +122,7 @@
                 '</div>' +
                 '<div class="ranges">' +
                     '<div class="range_inputs">' +
-                        '<button class="applyBtn" disabled="disabled" type="button"></button> ' +
+                        '<button class="applyBtn" disabled="disabled" с></button> ' +
                         '<button class="cancelBtn" type="button"></button>' +
                     '</div>' +
                 '</div>' +
