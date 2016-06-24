@@ -319,11 +319,15 @@
   vertical-align: middle;
   &-pos{
     position: absolute;
-    top: 1px;
+    bottom: 0;
     right: -47px;
   }
 }
 
+.icon-inp-red{
+  display: inline-block;
+  vertical-align: middle;
+}
 
 
 .icon-inp-clock2{
@@ -1220,6 +1224,21 @@ span.backlight-search {
       float: left;
       padding:10px 60px;
       margin: 25px 25px 0;
+      position: relative;
+      overflow: hidden;
+      &_closed-order{
+        &:before{
+          content: '';
+          position: absolute;
+          width:100%;
+          height:100%;
+          cursor: default;
+          background-color: #fff;
+          opacity:0.5;
+          z-index:99;
+        }
+        
+      }
     }
     &-thee{
       width: 590px;
@@ -1509,6 +1528,9 @@ span.backlight-search {
   border: 1px solid #e4e4e4;
   border-radius: 3px;
   margin-bottom: 25px;
+  &_mat{
+    margin-top: 25px;
+  }
   &__header{
    
   }
@@ -1542,6 +1564,37 @@ span.backlight-search {
   }
 }
 
+
+
+.sent-paid{
+  background-color: #575757;
+  position: relative;
+  padding: 5px 30px;
+  &__phone{
+    color: #d7d7d7;
+  }
+  &__zak{
+    color: #fff;
+    font-size: 18px;
+  }
+  &__btn{
+    display: inline-block;
+    min-width: 99px;
+    height: 22px;
+    text-align: center;
+    background-color: #72a748;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    &_poz{
+      position: absolute;
+      top:50%;
+      left:50%;
+      margin:-11px 0 0 -50px;
+    }
+  }
+}
 
 
 .sentence-table{
@@ -1632,11 +1685,19 @@ span.backlight-search {
     vertical-align: middle;
     margin-bottom: 10px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    
     &:hover{
       background-color: #50b612;
       box-shadow: 0 2px 0 #52942a;
     }
+    &_complaint{
+      background-color: #ee5454;
+      box-shadow: 0 2px 0 #c73737;
+      &:hover{
+        background-color: #ee5454;
+        box-shadow: 0 2px 0 #c73737;
+      }
+    }
+   
   }
   &__text{
     color: #808080;
@@ -2178,9 +2239,17 @@ span.backlight-search {
   display: none;
   &-content{
     padding: 30px 37px 20px 30px;
+    &_pad{
+      padding-top:50px;
+      padding-bottom:0;
+    }
     &__text{
       font-weight: bold;
       font-size:18px;
+      &_bottom{
+        font-weight: normal;
+        font-size: 13px;
+      }
     }
     &__dist{
       background-color: #fff6ae;
@@ -2211,6 +2280,7 @@ span.backlight-search {
       box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.16);
 
     }
+  
     &__item{
       margin: 11px 0 13px;
     }
@@ -2243,6 +2313,14 @@ span.backlight-search {
   }
 }
 
+
+
+#cancellations{
+  width:452px;
+}
+#customer-comp{
+  width:452px;
+}
 
 
 .input-cash{
@@ -2282,6 +2360,25 @@ span.backlight-search {
     font-size: 13px;
     display: inline-block;
     padding: 6px 11px;
+  }
+  &-texterea{
+    width: 100%;
+    height: 86px;
+    background-color: #fff;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.16);
+    resize: none;
+    padding:10px;
+    margin-bottom:10px;
+  }
+  &__ital{
+    width: 205px;
+    color: #6c6c6c;
+    font-size: 13px;
+    font-style: italic;
+    float: left;
+    text-align: left;
   }
 }
 

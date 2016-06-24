@@ -1767,7 +1767,7 @@
                 </div>
                 
                 <div class="prod-btn">
-                    <a class="prod-btn__link g-left" href="javascript: void(0);">Отменить и закрыть заказ</a>
+                    <a class="prod-btn__link g-left js-fancy" href="#cancellations">Отменить и закрыть заказ</a>
                     
                     <a class="prod-btn__btn" href="javascript: void(0);">В производство</a>
                     <p class="prod-btn__text">
@@ -1783,7 +1783,98 @@
 <!--\content\-->
 
 
+<!--popap-->
+<div class="popap">
 
+    <div id="cash" class="popap__item">
+        <a class="fancy-clock" href="javascript:parent.$.fancybox.close();"></a>
+        <h4 class="popap_h">Внесение наличных</h4>
+
+        <form class="popap-form" action="javascript: void(0);">
+
+            <label class="popap-form__item g-left">
+                <span class="popap-form__tit">Сумма</span>
+                <span class="popap-form__input input-cash">
+                    <input class="input-cash__text" type="text">
+                    <span class="input-cash__currency">руб.</span>
+                </span>
+            </label>
+
+            <label class="popap-form__item g-right">
+                <span class="popap-form__tit">Внесение</span>
+                <select class="popap-form__select">
+                    <option>Заказ №30-230</option>
+                    <option>Заказ №30-231</option>
+                    <option>Заказ №30-232</option>
+                </select>
+            </label>
+
+            <label class="popap-form__item">
+                <span class="popap-form__tit">Комментарий</span>
+                <textarea class="popap-form__textarea"></textarea>
+            </label>
+
+        </form>
+
+        <div class="popap-footer">
+            <input class="popap-footer-btn" type="button" value="Внести наличные">
+        </div>
+    </div>
+
+    <div id="close-replaced" class="popap__item">
+        <a class="fancy-clock" href="javascript:parent.$.fancybox.close();"></a>
+        <h4 class="popap_h">Закрыть смену</h4>
+
+        <div class="popap-content">
+            <p class="popap-content__text">
+                Вы на смене: 8 часов 10 минут <br>
+                Деньги в кассе: <span class="popap-content__dist">80 500 руб.</span>
+            </p>
+        </div>
+
+        <div class="popap-footer">
+            <input class="popap-footer-btn" type="button" value="Закрыть смену и распечатать отчёт">
+        </div>
+    </div>
+
+    <div id="cancellations" class="popap__item">
+        <a class="fancy-clock" href="javascript:parent.$.fancybox.close();"></a>
+        <h4 class="popap_h">Отмена заказа</h4>
+
+        <div class="popap-content popap-content_pad">
+            <p class="popap-content__text_bottom">
+                Почему вы отменяете заказ? Оставьте комментарий.
+            </p>
+        </div>
+
+        <div class="popap-footer">
+            <textarea class="popap-footer-texterea" placeholder="Клиент передумал"></textarea>
+            <input class="popap-footer-btn" type="button" value="Закрыть заказ">
+        </div>
+    </div>
+
+    <div id="customer-comp" class="popap__item">
+        <a class="fancy-clock" href="javascript:parent.$.fancybox.close();"></a>
+        <h4 class="popap_h">Жалоба клиента</h4>
+
+        <div class="popap-content popap-content_pad">
+            <p class="popap-content__text_bottom">
+                Чем недоволен клиент? Опишите жалобу.
+            </p>
+        </div>
+
+        <div class="popap-footer g-both">
+            <textarea class="popap-footer-texterea" placeholder="Курьер задержался на два часа, привезли холодную еду."></textarea>
+            <p class="popap-footer__ital">
+                При отправлении жалобы,
+                заказ автоматически закроется
+            </p>
+            <input class="popap-footer-btn" type="button" value="Отправить жалобу">
+        </div>
+    </div>
+
+</div>
+<!--\popap\-->
 
   </div>
   <script src="js/jquery.min.js"></script>

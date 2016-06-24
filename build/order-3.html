@@ -1,4 +1,28 @@
-//= template/head.html
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>INDEX</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/jquery.formstyler.css">
+    <link rel="stylesheet" href="js/source/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!--<link rel="stylesheet" href="js/datetimepicker/daterangepicker.css">-->
+    <link rel="stylesheet" href="js/datetimepicker/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="js/datetimepicker/bootstrap-datetimepicker-standalone.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="pages">
 
 <!--header-->
 <header class="header">
@@ -25,6 +49,8 @@
             <a class="additional__mail" href="javascript: void(0);">a.genadievna@pirogidomoy.ru</a>
             <a class="additional__close-replaced" href="javascript: void(0);">закрыть смену<i class="icon-entrance"></i></a>
         </div>
+        
+        
     </div>
 </header>
 <!--\header\-->
@@ -50,6 +76,7 @@
                     <label class="form__item order__tel">
                         <span class="form__name">Телефон</span>
                         <input class="form__input" type="tel" value="+7 (905) 235-34-23">
+                        <a class="icon-inp-red icon-inp-clock-pos" href="javascript: void(0);"></a>
                     </label>
 
                     <label class="form__item order__name">
@@ -246,7 +273,7 @@
                 </div>
             </div>
 
-            <div class="order__art-two">
+            <div class="order__art-two order__art-two_closed-order">
                 <div class="tab-menu">
                     
                     <ul class="tab-menu__nav">
@@ -905,14 +932,13 @@
             </div>
             
             <div class="order__art-thee">
-                <p class="by-phone">через телефон</p>
-                
-                <div class="sentence">
+                                
+                <div class="sentence sentence_mat">
                     
-                    <div class="sentence__header sent-header">
-                        <p class="sent-header__text">Предложите новую 
-                            <span class="sent-header__text-cst"> пиццу с морепродуктами </span>
-                        </p>
+                    <div class="sentence__header sent-header sent-paid">
+                        <p class="by-phone sent-paid__phone">через телефон</p>
+                        <p class="sent-paid__zak">Заказ №453-20</p>
+                        <a class="sent-paid__btn sent-paid__btn_poz" href="javascript: void(0);">Оплачен</a>
                     </div>
                     
                     <div class="sentence__table">
@@ -1743,13 +1769,7 @@
                 </div>
                 
                 <div class="prod-btn">
-                    <a class="prod-btn__link g-left js-fancy" href="#cancellations">Отменить и закрыть заказ</a>
-                    
-                    <a class="prod-btn__btn" href="javascript: void(0);">В производство</a>
-                    <p class="prod-btn__text">
-                        Для отправки в производство заполните <br>
-                        данные клиента и выберите позиции
-                    </p>
+                    <a class="prod-btn__btn prod-btn__btn_complaint js-fancy" href="#customer-comp">Жалоба от клиента</a>
                 </div>
                 
             </div>
@@ -1757,6 +1777,7 @@
     </div>
 </div>
 <!--\content\-->
+
 
 
 <!--popap-->
@@ -1816,13 +1837,13 @@
     <div id="cancellations" class="popap__item">
         <a class="fancy-clock" href="javascript:parent.$.fancybox.close();"></a>
         <h4 class="popap_h">Отмена заказа</h4>
-
+    
         <div class="popap-content popap-content_pad">
             <p class="popap-content__text_bottom">
                 Почему вы отменяете заказ? Оставьте комментарий.
             </p>
         </div>
-
+    
         <div class="popap-footer">
             <textarea class="popap-footer-texterea" placeholder="Клиент передумал"></textarea>
             <input class="popap-footer-btn" type="button" value="Закрыть заказ">
@@ -1848,8 +1869,24 @@
             <input class="popap-footer-btn" type="button" value="Отправить жалобу">
         </div>
     </div>
-
+    
 </div>
 <!--\popap\-->
 
-//= template/footer.html
+
+
+
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.formstyler.min.js"></script>
+  <script src="js/holmes.js"></script>
+  <script src="js/source/jquery.fancybox.pack.js"></script>
+  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/datetimepicker/moment.min.js"></script>
+  <script src="js/datetimepicker/ru.js"></script>
+  <script src="js/datetimepicker/bootstrap-datetimepicker.js"></script>
+  <!--<script src="js/datetimepicker/daterangepicker.js"></script>-->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
