@@ -11,8 +11,8 @@
 .jq-checkbox.checked .jq-checkbox__div {
 	width: 20px;
 	height: 20px;
-	background: url('../images/checkbox-checked.png') 50% 50% no-repeat;
-	
+	background: url('../images/checkbox-checked.png') -1px 50% no-repeat;
+	padding:1px;
 }
 .jq-checkbox.focused {
 	border: 1px solid #e4f7ff;
@@ -135,7 +135,7 @@
 .jq-number__field input {
 	box-sizing: border-box;
 	width: 100%;
-	padding: 3px 4px;
+	padding: 3.7px 4px;
 	border: none;
 	outline: none;
 	background: none;

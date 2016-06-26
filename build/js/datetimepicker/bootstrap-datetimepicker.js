@@ -338,15 +338,16 @@
                     .append('<ul class="time-list"> ' +
                         '<li class="time-list__item time-list__item-active"> ' +
                             '<span class="time-list__h">Сегодня</span>' +
-                            '<input class="form__input time-list__input"  type="text">'+
+                            '<input class="form__input time-list__input" value="22:00"  type="text">'+
                         '</li> ' +
                         '<li class="time-list__item">' +
                             '<span class="time-list__h">Завтра</span>' +
                             '<input class="form__input time-list__input" type="text">'+
                         '</li>' +
                         '</ul>'),
+                    timeView = $('<div>').addClass('timepicker my').append(getTimePickerTemplate()),
                     dateView = $('<div>').addClass('datepicker').append(getDatePickerTemplate()),
-                    timeView = $('<div>').addClass('timepicker').append(getTimePickerTemplate()),
+                    
                     content = $('<ul>').addClass('list-unstyled'),
                     toolbar = $('<li>').addClass('picker-switch' + (options.collapse ? ' accordion-toggle' : '')).append(getToolbar());
 
@@ -368,8 +369,8 @@
                     }
                     template.append(
                         $('<div>').addClass('row')
-                            .append(dateView.addClass('col-md-6'))
                             .append(timeView.addClass('col-md-6'))
+                            .append(dateView.addClass('col-md-6'))
                     );
                     if (options.toolbarPlacement === 'bottom') {
                         template.append(toolbar);

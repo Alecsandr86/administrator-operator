@@ -160,16 +160,7 @@ $(document).ready(function(){
     
     
     
-    /////////////////////////  Стилезация форм  /////////////////////////////
-    setTimeout(function () {
-        $(function() {
-
-            $('input[type="checkbox"], select, input[type="number"]').styler();
-
-        });
-    },1000);
-    
-    ///////////////////////// \ Стилезация форм \ /////////////////////////////
+   
     
     
     
@@ -862,10 +853,10 @@ $(document).ready(function(){
     
     
     var $date = $('#date').datetimepicker({
-        format: 'DD/MM/YYYY'
+        format: 'DD/MM/YYYY',
+        daysOfWeekDisabled: [0, 7]
     });
     
-
     
     
     // $date.on("dp.show",function (e) {
@@ -874,7 +865,22 @@ $(document).ready(function(){
     
     
 
-    //////////////// \  datetimepicker \  /////////////////////         
+    //////////////// \  datetimepicker \  /////////////////////   
+
+
+    
+    
+    /////////////////////////  Стилезация форм  /////////////////////////////
+    
+    setTimeout(function () {
+        $(function() {
+
+            $('input[type="checkbox"], select, input[type="number"]').styler();
+
+        });
+    },1000);
+
+    ///////////////////////// \ Стилезация форм \ /////////////////////////////
     
     
 });

@@ -6,10 +6,9 @@
 
 
 .pages-login{
-  position: relative;
+  position: absolute;
   width: 100%;
-  //min-height: 100vh;
-  min-height: 1000px;
+  min-height: 100%;
   background-image: linear-gradient(142deg, #12587e 0%, #c7eee3 100%);
   &__conteiner{
     position: absolute;
@@ -558,6 +557,7 @@
       &:focus{
         border: 3px solid #98dcff;
         box-shadow: none;
+        outline: none;
       }
       
       &-100{
@@ -583,7 +583,6 @@
     }
   }
   &__select{
-    
     &_poz{
       margin: 3px 20px 0 0;
       min-width: 110px;
@@ -683,8 +682,9 @@
   &_pay-poz{
     padding: 7px 21px 24px;
   }
- 
 }
+
+
 
 input[disabled]{
   background-color: transparent;
@@ -701,15 +701,14 @@ span.backlight-search {
 .table-cast{
   height:800px;
   overflow: auto;
+  padding:2px;
 }
-
-
 
 .table{
   border: 1px solid #e4e4e4;
   &_full{
     width: 100%;
-    overflow: hidden;
+    //overflow: hidden;
   }
   &__row{
     transition:all 0.3s ease;
@@ -2004,6 +2003,7 @@ span.backlight-search {
 .titul{
   display: inline-block;
   position: relative;
+  z-index:999;
   &:hover{
     .titul-popap{
       display: block;
@@ -2515,8 +2515,10 @@ span.backlight-search {
     display: inline-block;
     width:60px;
     height:32px;
+    padding:1px 8px;
   }
 }
+
 
 
 .time-tbody{
@@ -2621,6 +2623,57 @@ span.backlight-search {
   border: none;
   width:80px;
 }
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+//
+//.datepicker-up{
+//  
+//}
+//
+//
+//
+//.table-condensed{
+//  
+//}
+//
+//
+//.my{
+//  width:50%;
+//  text-align: center;
+//  td{
+//    height: 45px !important;
+//    width: 100% !important;
+//  }
+//  .time-list__h{
+//    width: 100% !important;
+//    margin:0!important;
+//    display: block !important;
+//    height: 30px !important;
+//  }
+//  .time-list__input{
+//    td{
+//      height:30px!important;
+//      line-height:30px!important;
+//      span{
+//        width:auto!important;
+//        height:auto!important;     
+//        line-height: 1.2!important;     
+//      }
+//    }
+//   
+//  }
+//}
+//
+//
+//
+//
+//
+
+
 
 //////////////// \  datetimepicker \  /////////////////////
 
