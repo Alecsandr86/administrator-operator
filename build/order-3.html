@@ -122,9 +122,9 @@
 
                     <label class="form__item  order__texterea">
                         <span class="form__name">Дополнительная информация</span>
-                        <div class="form__texterea">
+                        <span class="form__texterea">
                             <span class="form__texterea-el">Дом</span> Вход через арку, звонок не работает
-                        </div>
+                        </span>
                     </label>
 
                     <input class="form__btn" type="button" value="Отзвон">
@@ -137,10 +137,10 @@
                         
                         <ul class="tab-addres__nav nav-addres">
                             <li class="nav-addres__item">
-                                <a class="nav-addres__link nav-addres__link-active"href="javascript: void(0);">Последние адреса</a>
+                                <a class="nav-addres__link nav-addres__link-active" href="javascript: void(0);">Последние адреса</a>
                             </li>
                             <li class="nav-addres__item">
-                                <a class="nav-addres__link"href="javascript: void(0);">ИСТОРИЯ ЗАКАЗОВ</a>
+                                <a class="nav-addres__link" href="javascript: void(0);">ИСТОРИЯ ЗАКАЗОВ</a>
                             </li>
                         </ul>
                         
@@ -1728,7 +1728,7 @@
                                     <a class="nav-pst__link nav-pst__link_last" href="javascript: void(0);">5000</a>
                                 </li>
                                 <li class="nav-pst__item">
-                                    <input id="date" class="form__input form__input_cas-nav" type="text" placeholder="Сумма">
+                                    <input class="form__input form__input_cas-nav" type="text" placeholder="Сумма">
                                 </li>
                             </ul>
                             
@@ -1754,13 +1754,16 @@
                 <div class="delivery-time">
                     <h4 class="delivery-time__h">Время доставки</h4>
 
-                    <ul class="tab-pst__nav tab-pst_inline nav-pst g-both">
-                        
+                    <ul id="date" class="input-group date tab-pst__nav tab-pst_inline nav-pst g-both">
+
                         <li class="nav-pst__item">
-                            <a class="nav-pst__link nav-pst__link_bdrs nav-pst__link-active" href="javascript: void(0);">
-                                Доставим до 19:00 | 40 мин.
-                            </a>
-                            <a class="nav-pst__link nav-pst__link_bdrs nav-pst__link_mar" href="javascript: void(0);">
+                            <span class="nav-pst__link nav-pst__link_inp nav-pst__link_bdrs nav-pst__link-active">
+                                Доставим до
+                                <input type='text' class="form-control form-control_style" />
+                                <!--19:00 | 40 мин.-->
+                            </span>
+
+                            <a class="input-group-addon nav-pst__link nav-pst__link_bdrs nav-pst__link_mar" href="javascript: void(0);">
                                 Другое время
                             </a>
                         </li>

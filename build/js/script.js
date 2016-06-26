@@ -2,6 +2,8 @@
 window.log = function(param){
     console.log(param);
 };
+
+
 $(document).ready(function(){
 
     //Chrome Smooth Scroll
@@ -15,12 +17,7 @@ $(document).ready(function(){
     };
 
 
-    
-    
-    
-    
     ///////////////////// скрытый пароль //////////////////////////
-    
     var $pass = $('#pass');
     var $btn_show = $('.pass-btn');
 
@@ -33,7 +30,7 @@ $(document).ready(function(){
             }, options);
 
             var control = $(settings.control);
-            var field = $(settings.field)
+            var field = $(settings.field);
 
             control.bind('click', function () {
                 $(this).toggleClass('show_pass');
@@ -50,8 +47,7 @@ $(document).ready(function(){
         field: '#pass',
         control: '.js-pass'
     });
-    
-    ///////////////////// \скрытый пароль\ //////////////////////////
+///////////////////// \скрытый пароль\ //////////////////////////
 
     
     
