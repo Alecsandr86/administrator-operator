@@ -1,12 +1,11 @@
-//Так приятней :)
+
 window.log = function(param){
     console.log(param);
 };
 
 
 $(document).ready(function(){
-
-    //Chrome Smooth Scroll
+    
     try {
         $.browserSelector();
         if($("html").hasClass("chrome")) {
@@ -18,6 +17,8 @@ $(document).ready(function(){
 
 
     ///////////////////// скрытый пароль //////////////////////////
+    
+    
     var $pass = $('#pass');
     var $btn_show = $('.pass-btn');
 
@@ -47,7 +48,9 @@ $(document).ready(function(){
         field: '#pass',
         control: '.js-pass'
     });
-///////////////////// \скрытый пароль\ //////////////////////////
+    
+    
+    ///////////////////// \скрытый пароль\ //////////////////////////
 
     
     
@@ -257,6 +260,7 @@ $(document).ready(function(){
 
     
     ///////////////    Удалить результат  поиска   ///////////////
+    
     
     jQuery(function($) {
         
@@ -664,98 +668,12 @@ $(document).ready(function(){
 
 
     });
-
-
-
-
-
-
-    // jQuery(document).ready(function(){
-    //     var minlen = 2; // минимальная длина слова
-    //     var keyint = 1000; // интервал между нажатиями клавиш
-    //     var term = '';
-    //     var n = 0;
-    //     var time_keyup = 0;
-    //     var time_search = 0;
-    //    
-    //     var inputSearsh6 = $('.js-searsh__input_6');                                 // инпут
-    //     var classBg = $('span.backlight-search');                                   // класс подсветки
-    //     var contentSearsh6 = $('.js-searsh__cont_6 .table__cell');                   // область поиска
-    //
-    //
-    //     function dosearch() {
-    //         term = inputSearsh6.val();
-    //         classBg.each(function(){ //удаляем старую подсветку
-    //             jQuery(this).after(jQuery(this).html()).remove();
-    //         });
-    //
-    //         var t = '';
-    //         contentSearsh6.each(function(){ // в селекторе задаем область поиска
-    //             jQuery(this).html(jQuery(this).html().replace(new RegExp(term, 'ig'), '<span class="backlight-search">$&</span>')); // выделяем найденные фрагменты
-    //             n = classBg.length; // количество найденных фрагментов
-    //             //console.log('n = '+n);
-    //         });
-    //
-    //
-    //     }
-    //
-    //     inputSearsh6.keyup(function(){
-    //         var d1 = new Date();
-    //         time_keyup = d1.getTime();
-    //         if (inputSearsh6.val()!=term) // проверяем, изменилась ли строка
-    //             if (inputSearsh6.val().length>=minlen) { // проверяем длину строки
-    //                 setTimeout(function(){ // ждем следующего нажатия
-    //
-    //                     setTimeout(function (e) {
-    //
-    //                         jQuery('div.jq-checkbox').each(function(){ //удаляем старую подсветку
-    //                             jQuery(this).after(jQuery(this).html()).remove();
-    //                         });
-    //                         jQuery('div.jq-checkbox__div').each(function(){ //удаляем старую подсветку
-    //                             jQuery(this).after(jQuery(this).html()).remove();
-    //                         });
-    //
-    //                         $('.table__row input[type="checkbox"]').styler();
-    //
-    //
-    //                         ////////////////////////  Статус btn  /////////////////////////////
-    //
-    //                         $('.status-btn').bind('click',function (e) {
-    //                             $(this).nextAll('.status-up').removeClass('g-hidden');
-    //
-    //                         });
-    //
-    //                         jQuery(function($){
-    //                             $(document).mouseup(function (e){ // событие клика по веб-документу
-    //                                 var div = $(".status-up"); // тут указываем ID элемента
-    //                                 if (!div.is(e.target) // если клик был не по нашему блоку
-    //                                     && div.has(e.target).length === 0) { // и не по его дочерним элементам
-    //                                     div.addClass('g-hidden'); // скрываем его
-    //                                 }
-    //                             });
-    //                         });
-    //
-    //                         //////////////////////// \ Статус btn \ /////////////////////////////
-    //
-    //
-    //                     },100);
-    //
-    //                     var d2 = new Date();
-    //                     time_search = d2.getTime();
-    //                     if (time_search-time_keyup>=keyint) // проверяем интервал между нажатиями
-    //                         dosearch(); // если все в порядке, приступаем к поиску
-    //                 }, keyint);
-    //             }
-    //     });
-    //
-    //
-    // });
-    
-    
     
     
     
     ////////////////////////  btn  /////////////////////////////
+    
+    
     
     $('.status-btn').bind('click',function (e) {
        $(this).nextAll('.status-up').removeClass('g-hidden');
@@ -777,8 +695,13 @@ $(document).ready(function(){
     $('.js-btn__cont-down').bind('click',function (e) {
         $(this).toggleClass('js-btn__cont-down_active').parents('.table-cast').find('.js-cont-down').slideToggle(0);
     });
-    
-    
+
+    $('.js-btn__kl').bind('click',function (e) {
+        $(this).find('.js-btn__cont-down')
+            .toggleClass('js-btn__cont-down_active')
+            .parents('.table-cast')
+            .find('.js-cont-down').slideToggle(0);
+    });
     
     $('.cont-addres__btn-up').bind('click',function () {
         
@@ -817,8 +740,36 @@ $(document).ready(function(){
             }
         });
     });
-    
 
+
+    $('.js-checkbox_all').bind('click',function(e) {
+        e.preventDefault();
+
+        $(this).toggleClass('active');
+
+        if($(this).hasClass('active')){
+            $(this).parents('.table_full')
+                .find('input:checkbox')
+                .attr('checked', true)
+                .addClass('checked')
+                .trigger('refresh');
+        }else{
+            $(this).parents('.table_full')
+                .find('input:checkbox')
+                .attr('checked', false)
+                .removeClass('checked')
+                .trigger('refresh');
+        }
+
+    });
+
+
+    $(".authorization__form_pass").bind("focus blur", function(e){
+        var el = $(this);
+        setTimeout(function(){
+            el.parents('.authorization__form_input').toggleClass("focused", el.is(":focus"));
+        }, 0);
+    });
 
     //////////////////////// \  btn \ /////////////////////////////
     
@@ -839,8 +790,10 @@ $(document).ready(function(){
     
     
     ////////////////////////    castum scroller   /////////////////////////////
+    
 
     $('.table-pst__scroll').mCustomScrollbar();
+    
     
     //////////////////////// \  castum scroller \ /////////////////////////////
 
@@ -872,6 +825,7 @@ $(document).ready(function(){
     
     /////////////////////////  Стилезация форм  /////////////////////////////
     
+    
     setTimeout(function () {
         $(function() {
 
@@ -880,8 +834,15 @@ $(document).ready(function(){
         });
     },1000);
 
-    ///////////////////////// \ Стилезация форм \ /////////////////////////////
     
+    ///////////////////////// \ Стилезация форм \ /////////////////////////////
+
+    /////////////////////////   Набор номера   /////////////////////////////
+
+    $("#form_tel,#form_tel2").mask("+7(999) 999-99-99");
+
+    ///////////////////////// \ Набор номера \ /////////////////////////////
+
     
 });
 

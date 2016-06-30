@@ -3,7 +3,9 @@
 
 //////////////// login /////////////////////
 
-
+.pages{
+  padding:50px 0 0;
+}
 
 .pages-login{
   position: absolute;
@@ -57,13 +59,18 @@
       background-color: $g-white;
       border: 1px solid #d7d7d7;
       border-radius: 3px;
-      padding: 0 14px;
+      padding: 1px 14px;
       font-size: 20px;
       color: darken($g-color,30%);
+      &.focused{
+        border: 2px solid #98dcff;
+        padding: 0 13px;
+      }
     }
     &_pass{
       border: none;
-      height: 39px;
+      height: 37px;
+
     }
 
   }
@@ -187,8 +194,12 @@
   background-color: #007cc4;
   padding: 12px 12px 0;
   min-width: 1920px;
+  position: fixed;
+  top:0;
+  z-index:99;
   &__logo{
     float: left;
+    margin: 0 8px 0 2px;gi
   }
   &__menu{
     padding: 4px 3px 0;
@@ -198,6 +209,12 @@
   &__additional{
     float: right;
   }
+}
+
+
+
+.js-btn__kl{
+  cursor: pointer;
 }
 
 
@@ -547,7 +564,7 @@
       border: 1px solid #e4e4e4;
       border-radius: 3px;
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.16);
-      padding: 0 0 0 11px;
+      padding: 1px 0 0 11px;
       display: block;
       background: white url('../images/icon-reset.png') 120%  50% no-repeat;
       transition: background 0.4s;
@@ -558,6 +575,7 @@
         border: 3px solid #98dcff;
         box-shadow: none;
         outline: none;
+        padding: 2px 0 0 9px;
       }
       
       &-100{
@@ -572,6 +590,7 @@
           height: 31px;
         }
       }
+
     }
     &__reset{
       display: inline-block;
@@ -624,6 +643,23 @@
       box-shadow: none;
       padding:0 9px;
     }
+    &_dis{
+      background-color: #f5f5f5!important;
+    }
+    &_no-adr{
+      border: 2px solid #fdc93c!important;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      padding:0 9px;
+    }
+    &_zap{
+      border: 2px solid #fd723c!important;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      padding:0 9px;
+    }
   }
   &__texterea{
     width:100%;
@@ -636,6 +672,9 @@
     box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.16);
     font-size:13px;
     display: inline-block;
+    &_disabled{
+      background-color: transparent;
+    }
     &-el{
       display: inline-block;
       background-color: #61ca95;
@@ -648,7 +687,7 @@
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none;
-      padding:0 9px;
+      padding:9px 9px;
     }
     &:invalid{
       border: 2px solid #fd723c;
@@ -754,12 +793,23 @@ span.backlight-search {
       padding:0 15px;
     }
   }
+
+
+
+
   &__cell{
     text-align: center;
     border-bottom: 1px solid #e4e4e4;
     padding: 13px 10px 11px;
     vertical-align: middle;
     position: relative;
+    &_bd{
+      border-right: 1px solid #e4e4e4;
+      border-left: 1px solid #e4e4e4;
+    }
+    &_bdr{
+      border-right: 1px solid #e4e4e4;
+    }
     &_hiden{
       display: none;
     }
@@ -882,6 +932,7 @@ span.backlight-search {
     left:-9px;
     width: 93px;
     height: 41px;
+    z-index:9;
     background-color: #fff;
     border-radius: 0px 0px 3px 3px;
     box-shadow: 0 8px 27px rgba(0, 0, 0, 0.23);
@@ -972,6 +1023,11 @@ span.backlight-search {
   }
 }
 
+
+
+.checkbox_pos{
+  margin:0 5px 0 0;
+}
 
 
 .phone-client{
@@ -1230,6 +1286,9 @@ span.backlight-search {
       position: relative;
       overflow: hidden;
       &_closed-order{
+        .tab-menu__tov{
+          border-color: transparent;
+        }
         &:before{
           content: '';
           position: absolute;
@@ -1423,6 +1482,9 @@ span.backlight-search {
         background-color: #e0f1fa;
       }
     }
+    &_dis{
+      background-color: #f5f5f5;
+    }
   }
 }
 
@@ -1442,13 +1504,12 @@ span.backlight-search {
   width: 539px;
   border: none;
   &__row{
-    .icon-hint,
+
     .icon-inp-clock2{
       opacity:0;
     }
     &:hover{
       background-color:#f5f5f5;
-      .icon-hint,
       .icon-inp-clock2{
         opacity:1;
       }
@@ -1681,7 +1742,7 @@ span.backlight-search {
     border: none;
     min-width: 144px;
     min-height: 35px;
-    line-height:32px;
+    line-height:35px;
     text-align: center;
     background-color: #a8a8a8;
     border-radius: 3px;
@@ -1977,6 +2038,7 @@ span.backlight-search {
     text-align: left;
     padding:10px;
     line-height:20px;
+    z-index:9;
     &:before{
       content: '';
       background: url('../images/help__up-tr.png') 0 0 no-repeat;
@@ -2119,7 +2181,7 @@ span.backlight-search {
 
 .footer{
   height:70px;
-  position: absolute;
+  position: fixed;
   bottom:0;
   left:0;
   width:100%;
@@ -2523,26 +2585,26 @@ span.backlight-search {
 
 .time-tbody{
   position: relative;
-  &:before{
-    content: '';
-    display: inline-block;
-    width:100%;
-    height:1px;
-    background-color: #e0e0e0;
-    position: absolute;
-    top:-5px;
-    left:0;
-  }
-  &:after{
-    content: '';
-    display: inline-block;
-    width:100%;
-    height:1px;
-    background-color: #e0e0e0;
-    position: absolute;
-    bottom:-5px;
-    left:0;
-  }
+  //&:before{
+  //  content: '';
+  //  display: inline-block;
+  //  width:100%;
+  //  height:1px;
+  //  background-color: #e0e0e0;
+  //  position: absolute;
+  //  top:-5px;
+  //  left:0;
+  //}
+  //&:after{
+  //  content: '';
+  //  display: inline-block;
+  //  width:100%;
+  //  height:1px;
+  //  background-color: #e0e0e0;
+  //  position: absolute;
+  //  bottom:-5px;
+  //  left:0;
+  //}
   
 }
 
@@ -2625,59 +2687,15 @@ span.backlight-search {
 }
 
 
-////////////////////////////////////////////////////////////////
-
-
-
-//
-//.datepicker-up{
-//  
-//}
-//
-//
-//
-//.table-condensed{
-//  
-//}
-//
-//
-//.my{
-//  width:50%;
-//  text-align: center;
-//  td{
-//    height: 45px !important;
-//    width: 100% !important;
-//  }
-//  .time-list__h{
-//    width: 100% !important;
-//    margin:0!important;
-//    display: block !important;
-//    height: 30px !important;
-//  }
-//  .time-list__input{
-//    td{
-//      height:30px!important;
-//      line-height:30px!important;
-//      span{
-//        width:auto!important;
-//        height:auto!important;     
-//        line-height: 1.2!important;     
-//      }
-//    }
-//   
-//  }
-//}
-//
-//
-//
-//
-//
-
 
 
 //////////////// \  datetimepicker \  /////////////////////
 
-
+input{
+  &:focus{
+    outline: none;
+  }
+}
 
 
 

@@ -140,10 +140,8 @@ gulp.task('sprite', function () {
         imgPath: '../images/sprite.png',
         cssOpts: {
             cssClass: function (item) {
-                // If this is a hover sprite, name it as a hover one (e.g. 'home-hover' -> 'home:hover')
                 if (item.name.indexOf('-hover') !== -1) {
                     return '.sprite-' + item.name.replace('-hover', ':hover');
-                    // Otherwise, use the name as the selector (e.g. 'home' -> 'home')
                 } else {
                     return '.sprite-' + item.name;
                 }

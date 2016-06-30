@@ -73,7 +73,7 @@
                     
                     <label class="form__item order__tel">
                         <span class="form__name">Телефон</span>
-                        <input class="form__input" type="tel" value="+7 (905) 235-34-23">
+                        <input id="form_tel" class="form__input" type="tel">
                     </label>
 
                     <label class="form__item order__name">
@@ -81,7 +81,7 @@
                     </label>
 
                     <label class="form__item order__tel">
-                        <input  disabled class="form__input" type="tel" value="+7 (911) 123-23-00">
+                        <input id="form_tel2" disabled class="form__input" type="tel">
                         <a class="icon-inp-clock icon-inp-clock-pos" href="javascript: void(0);"></a>
                     </label>
                     
@@ -348,7 +348,6 @@
                                     <td class="table-pst__header table-pst_four"></td>
                                 </tr>
                                 </thead>
-                                
                              </table>
                             
                             <div class="table-pst__scroll">
@@ -358,13 +357,33 @@
                                     <tbody class="table-pst__body">
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell table-pst_first">Осетинский пирог с бараниной </td>
+
                                             <td class="table-pst__cell table-pst_two table-pst__cell-tac">
-                                                
                                                 <div class="number-plus-minus npmber-plus-minus_hover">
-                                                    <input type="number" class="number" value="5" />
+                                                    <input type="number" class="number" value="0" />
                                                 </div>
-                                              
-                                                
+                                            </td>
+
+                                            <td class="table-pst__cell table-pst_thee">599</td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-pst__row">
+                                            <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
                                             </td>
                                             <td class="table-pst__cell table-pst_thee">599</td>
                                             <td class="table-pst__cell table-pst_four table-pst__cell-tac">
@@ -378,77 +397,220 @@
                                                         800 гр.
                                                     </span>
                                                 </div>
-                                                
                                             </td>
                                         </tr>
                                         <tr class="table-pst__row">
-                                            <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                            <td class="table-pst__cell"></td>
-                                            <td class="table-pst__cell table-pst_thee">599</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
-                                        </tr>
-                                        <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell table-pst_thee">599</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с индейкой и сыром</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с капустой</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
 
 
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
 
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной</td>
@@ -458,95 +620,313 @@
                                                 </div>
                                             </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr class="table-pst__row">
                                             <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                            <td class="table-pst__cell"></td>
+                                            <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                                <div class="number-plus-minus npmber-plus-minus_hover">
+                                                    <input type="number" class="number" value="0" />
+                                                </div>
+                                            </td>
                                             <td class="table-pst__cell">549</td>
-                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac"></td>
+                                            <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                                <div class="help">
+                                                    <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                                </div>
+                                            </td>
                                         </tr>
-                                        
-                                        
-                                        
                                         
                                     </tbody>
                                     
@@ -571,143 +951,586 @@
 
                             <div class="table-pst__scroll">
 
-
                                 <table class="table table-pst">
 
                                     <tbody class="table-pst__body">
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell table-pst_first">Осетинский пирог с бараниной </td>
-                                        <td class="table-pst__cell table-pst_two"></td>
+
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+
                                         <td class="table-pst__cell table-pst_thee">599</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell table-pst_thee">599</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell table-pst_thee">599</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с индейкой и сыром</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с капустой</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой и яйцом</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с индейкой и сыром</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" value="1" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой и яйцом</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой и яйцом</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с индейкой и сыром</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой и яйцом</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
+
                                     </tbody>
 
                                 </table>
+
                             </div>
 
                         </div>
@@ -727,43 +1550,586 @@
 
                             <div class="table-pst__scroll">
 
-
                                 <table class="table table-pst">
 
                                     <tbody class="table-pst__body">
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell table-pst_first">Осетинский пирог с бараниной </td>
-                                        <td class="table-pst__cell table-pst_two"></td>
+
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+
                                         <td class="table-pst__cell table-pst_thee">599</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell table-pst_thee">599</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell table-pst_thee">599</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с индейкой и сыром</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с капустой</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
+
+
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" value="1" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-pst__row">
+                                        <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+
                                     </tbody>
 
                                 </table>
+
                             </div>
 
                         </div>
@@ -783,143 +2149,143 @@
 
                             <div class="table-pst__scroll">
 
-
                                 <table class="table table-pst">
 
                                     <tbody class="table-pst__body">
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell table-pst_first">Осетинский пирог с бараниной </td>
-                                        <td class="table-pst__cell table-pst_two"></td>
+
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+
                                         <td class="table-pst__cell table-pst_thee">599</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с говядиной</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell table-pst_thee">599</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с говядиной и картофелем</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
+                                        <td class="table-pst__cell table-pst_thee">599</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с говядиной и свининой</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с индейкой и сыром</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr class="table-pst__row">
                                         <td class="table-pst__cell">Осетинский пирог с капустой</td>
-                                        <td class="table-pst__cell"></td>
+                                        <td class="table-pst__cell table-pst_two table-pst__cell-tac">
+                                            <div class="number-plus-minus npmber-plus-minus_hover">
+                                                <input type="number" class="number" value="0" />
+                                            </div>
+                                        </td>
                                         <td class="table-pst__cell">549</td>
+                                        <td class="table-pst__cell table-pst_four table-pst__cell-tac">
+                                            <div class="help">
+                                                <a class="icon-help" href="javascript: void(0);"></a>
+                                                    <span class="help__up">
+                                                        <span class="help__text">
+                                                            Дрожжевое тесто, капуста, укроп,
+                                                            соль, перец, лук репчатый, масло сливочное
+                                                        </span>
+                                                        800 гр.
+                                                    </span>
+                                            </div>
+                                        </td>
                                     </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой и яйцом</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с индейкой и сыром</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой и яйцом</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой и яйцом</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с индейкой и сыром</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с капустой и яйцом</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
-                                    <tr class="table-pst__row">
-                                        <td class="table-pst__cell">Осетинский пирог с картофелем и грибами</td>
-                                        <td class="table-pst__cell"></td>
-                                        <td class="table-pst__cell">549</td>
-                                    </tr>
+
+
                                     </tbody>
 
                                 </table>
+
                             </div>
 
                         </div>
@@ -1077,7 +2443,7 @@
                                 </td>
                                 <td class="table-pst__cell">
                                     <div class="number-plus-minus npmber-plus-minus_hover">
-                                        <input type="number" value="1" />
+                                        <input type="number" min="1" max="100" value="1" />
                                     </div>
                                 </td>
                                 <td class="table-pst__cell table-pst__cell_padd table-tac">549</td>
@@ -1211,7 +2577,7 @@
                                 </td>
                                 <td class="table-pst__cell">
                                     <div class="number-plus-minus npmber-plus-minus_hover">
-                                        <input type="number" value="1" />
+                                        <input type="number" min="1" max="100" value="1" />
                                     </div>
                                 </td>
                                 <td class="table-pst__cell table-pst__cell_padd table-tac">
@@ -1347,7 +2713,7 @@
                                 </td>
                                 <td class="table-pst__cell">
                                     <div class="number-plus-minus npmber-plus-minus_hover">
-                                        <input type="number" value="1" />
+                                        <input type="number" min="1" max="100" value="1" />
                                     </div>
                                 </td>
                                 <td class="table-pst__cell table-pst__cell_padd table-tac">
@@ -1483,7 +2849,7 @@
                                 </td>
                                 <td class="table-pst__cell">
                                     <div class="number-plus-minus npmber-plus-minus_hover">
-                                        <input type="number" value="1" />
+                                        <input type="number" min="1" max="100" value="1" />
                                     </div>
                                 </td>
                                 <td class="table-pst__cell table-pst__cell_padd table-tac">
@@ -1621,7 +2987,7 @@
                                 </td>
                                 <td class="table-pst__cell">
                                     <div class="number-plus-minus npmber-plus-minus_hover">
-                                        <input type="number" value="1" />
+                                        <input type="number" min="1" max="100" value="1" />
                                     </div>
                                 </td>
                                 <td class="table-pst__cell table-pst__cell_padd table-tac">
@@ -1645,6 +3011,7 @@
                                 <td class="table-pst__cell"></td>
                             </tr>
                         </table>
+
                         <div class="box-shares">
                             <ul class="nav-pst box-shares__item g-both">
                                 <li class="nav-pst__item">
@@ -1883,6 +3250,7 @@
 </div>
 <!--\popap\-->
 
+
   </div>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.formstyler.min.js"></script>
@@ -1892,8 +3260,9 @@
   <script src="js/datetimepicker/moment.min.js"></script>
   <script src="js/datetimepicker/ru.js"></script>
   <script src="js/datetimepicker/bootstrap-datetimepicker.js"></script>
-  <!--<script src="js/datetimepicker/daterangepicker.js"></script>-->
+  <script src="js/jquery.maskedinput.min.js"></script>
   <script src="js/script.js"></script>
+
 
 </body>
 </html>
