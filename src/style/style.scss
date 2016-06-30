@@ -196,10 +196,10 @@
   min-width: 1920px;
   position: fixed;
   top:0;
-  z-index:99;
+  z-index:997;
   &__logo{
     float: left;
-    margin: 0 8px 0 2px;gi
+    margin: 0 8px 0 2px;
   }
   &__menu{
     padding: 4px 3px 0;
@@ -587,7 +587,8 @@
       &-max{
         width:525px;
         &:focus{
-          height: 31px;
+          height: 32px;
+          padding: 0 0 0 9px;
         }
       }
 
@@ -2065,7 +2066,7 @@ span.backlight-search {
 .titul{
   display: inline-block;
   position: relative;
-  z-index:999;
+  z-index:996;
   &:hover{
     .titul-popap{
       display: block;

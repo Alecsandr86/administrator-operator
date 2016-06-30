@@ -66,7 +66,8 @@ i{
   display :inline-block;
 }
 .wrapper{
-  width:1920px;
+  max-width:1920px;
+  min-width:1520px;
   margin: 0 auto;
   &_100{
     width:100%;
